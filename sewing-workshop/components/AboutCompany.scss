@@ -1,7 +1,4 @@
 .AboutCompany {
-  &__main-container {
-
-  }
 
   &__text-container {
     width: 1200px;
@@ -20,4 +17,16 @@
     font-size: 30px;
     font-weight: 200;
   }
-}
+
+  @media screen and (max-width: 1200px) {
+    &__text-container {
+      width: auto;
+      padding: 0 15px;
+    }
+
+    &__article {
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+ }
