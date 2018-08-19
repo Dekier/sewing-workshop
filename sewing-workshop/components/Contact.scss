@@ -1,0 +1,121 @@
+.Contact {
+  &__main-container {
+    min-height: 600px;
+    width: 100vw;
+    margin: auto;
+    background: linear-gradient(-45deg, rgb(39, 182, 235), rgb(0, 115, 255), rgb(39, 182, 235), rgb(0, 115, 255));
+    background-size: 400% 400%;
+    animation: Gradient 10s ease infinite;
+
+    &:after {
+      content: '';
+      position: relative;
+      bottom: 450px;
+      width: 0;
+      height: 0;
+      border-top: solid 100px #fff;
+      border-left: solid 100vw transparent;
+      border-right: solid 0px transparent;
+    }
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    margin: auto;
+  }
+
+  &__half-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    iframe {
+      padding-top: 150px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    font-family: 'Muli', sans-serif;
+    font-weight: 200;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+    margin: 120px 0 50px;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 1200px) {
+    &__main-container {
+      &:after {
+        bottom: 831px;
+      }
+    }
+    &__center {
+      flex-direction: column;
+      width: 100vw;
+    }
+
+    &__half-container {
+      margin: auto;
+      width: 100vw;
+      iframe {
+        margin: auto;
+        padding-top: 50px;
+        width: 100vw;
+      }
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    &__main-container {
+      &:after {
+        content: '';
+        position: relative;
+        bottom: 882px;
+        width: 0;
+        height: 0;
+        border-top: solid 40px #fff;
+        border-left: solid 100vw transparent;
+        border-right: solid 0px transparent;
+      }
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    &__text {
+      font-size: 18px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 760px) and (orientation:landscape) {
+    &__main-container {
+      &:after {
+        bottom: 890px;
+      }
+    }
+  }
+}
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
