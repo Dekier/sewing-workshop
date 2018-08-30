@@ -4,6 +4,7 @@
     <AboutCompany/>
     <Offer/>
     <Contact/>
+    <Menu/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Intro from '~/components/Intro.vue'
 import AboutCompany from '~/components/AboutCompany.vue'
 import Offer from '~/components/Offer.vue'
 import Contact from '~/components/Contact.vue'
+import Menu from '~/components/Menu.vue'
 
 export default {
   name: 'Page',
@@ -20,7 +22,8 @@ export default {
     Intro,
     AboutCompany,
     Offer,
-    Contact
+    Contact,
+    Menu
   }
 }
 </script>
