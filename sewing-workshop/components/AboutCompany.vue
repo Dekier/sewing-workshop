@@ -1,5 +1,7 @@
 <template>
-  <div class="AboutCompany__main-container">
+  <div
+  id="company"
+  class="AboutCompany__main-container">
     <div class="AboutCompany__text-container">
        <h3 class="AboutCompany__subtitle">
         Moja pasja

@@ -102,6 +102,12 @@
     100% { top: 0; }
   }
 
+  @media screen and (max-width: 1200px) {
+    &__buttons-container {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 650px) {
     &__main-container {
       &:after {
