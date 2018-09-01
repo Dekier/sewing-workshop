@@ -1,5 +1,8 @@
 <template>
   <div class="Page__main-container">
+    <div class="Page__logo">
+      <img src="~/static/svg/ulotka-1.svg"/>
+    </div>
     <Intro/>
     <AboutCompany/>
     <Offer/>
