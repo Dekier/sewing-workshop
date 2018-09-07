@@ -3,6 +3,7 @@
   id="offer"
   class="Offer__main-container">
     <div class="Offer__left-container">
+      <h3 class="Offer__offer-title-mobile">Oferta</h3>
       <div
       v-for="(data, index) in boxesData"
       :key="index"
@@ -69,14 +70,14 @@ export default {
   data () {
     return {
       boxesData: [
-        {url: '/images/offer/dresses.jpg', title: 'SUKNIE', info: ['Skracanie Długości', 'Skracanie Rękawów', 'Zwężanie', 'Taliowanie', 'Zmiana Dekoltu', ' Wszywanie zamków']},
-        {url: '/images/offer/shirt.jpg', title: 'KOSZULE', info: ['Skracanie Długości', 'Skracanie Rękawów', 'Zwężanie', 'Taliowanie']},
-        {url: '/images/offer/jeans.jpg', title: 'JEANS', info: ['Skracanie Długości', 'Skracanie z Orginalnym Dołem', 'Wszywanie zamków', 'Zwężanie w Pasie', 'Zwężanie Nogawek', 'Naszywanie Łat']},
-        {url: '/images/offer/coat.jpg', title: 'PŁASZCZE', info: ['Skracanie Długości', 'Skracanie Rękawów', 'Zwężanie', 'Pszyszywanie Guzików']},
-        {url: '/images/offer/trausers.jpg', title: 'SPODNIE', info: ['Skracanie Długości', 'Wydłużanie', 'Wszywanie Zamków', 'Zwężanie w Pasie', 'Zwężanie Nogawek']},
-        {url: '/images/offer/skirt.jpg', title: 'SPÓDNICE', info: ['Zwężanie', 'Skracanie Długości', 'Wszywanie Zamków', 'Wymiana Podszewki']},
-        {url: '/images/offer/jacket.jpg', title: 'MARYNARKI', info: ['Skracanie Długości', 'Skracanie Rękawów', 'Zwężanie', 'Taliowanie', 'Przyszywanie Guzików']},
-        {url: '/images/offer/room.jpg', title: 'ZASŁONY I OBRUSY', info: ['Skracanie', 'Obszywanie']}
+        {url: '/images/dresses.jpg', title: 'SUKNIE', info: ['Skracanie Długości', 'Skracanie Rękawów', 'Zwężanie', 'Taliowanie', 'Zmiana Dekoltu', ' Wszywanie zamków']},
+        {url: '/images/shirt2.jpg', title: 'KOSZULE', info: ['Skracanie Długości', 'Skracanie Rękawów', 'Zwężanie', 'Taliowanie']},
+        {url: '/images/jeans.jpg', title: 'JEANS', info: ['Skracanie Długości', 'Skracanie z Orginalnym Dołem', 'Wszywanie zamków', 'Zwężanie w Pasie', 'Zwężanie Nogawek', 'Naszywanie Łat']},
+        {url: '/images/coat.jpg', title: 'PŁASZCZE', info: ['Skracanie Długości', 'Skracanie Rękawów', 'Zwężanie', 'Pszyszywanie Guzików']},
+        {url: '/images/trausers.jpg', title: 'SPODNIE', info: ['Skracanie Długości', 'Wydłużanie', 'Wszywanie Zamków', 'Zwężanie w Pasie', 'Zwężanie Nogawek']},
+        {url: '/images/skirt.jpg', title: 'SPÓDNICE', info: ['Zwężanie', 'Skracanie Długości', 'Wszywanie Zamków', 'Wymiana Podszewki']},
+        {url: '/images/jacket.jpg', title: 'MARYNARKI', info: ['Skracanie Długości', 'Skracanie Rękawów', 'Zwężanie', 'Taliowanie', 'Przyszywanie Guzików']},
+        {url: '/images/room.jpg', title: 'ZASŁONY i OBRUSY', info: ['Skracanie', 'Obszywanie']}
       ]
     }
   },

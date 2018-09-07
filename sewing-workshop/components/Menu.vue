@@ -14,6 +14,7 @@
     <div class="Menu__icons-container">
       <div class="Menu__buttons-container">
         <div
+        @click="hideMenu"
         v-scroll-to="scrollTo('company')"
         class="Menu__button">
           <svg
@@ -35,6 +36,7 @@
           <span class="Menu__button-description">O Firmie</span>
         </div>
         <div
+        @click="hideMenu"
         v-scroll-to="scrollTo('offer')"
         class="Menu__button">
           <svg
@@ -49,6 +51,7 @@
           <span class="Menu__button-description">Oferta</span>
         </div>
         <div
+        @click="hideMenu"
         v-scroll-to="scrollTo('contact')"
         class="Menu__button Menu__button-green">
           <svg viewBox="0 0 480 480" width="50" height="50">
@@ -59,6 +62,7 @@
           <span class="Menu__button-description Menu__button-grey">Kontakt</span>
         </div>
         <div
+        @click="hideMenu"
         v-scroll-to="scrollTo('map')"
         class="Menu__button">
         <svg viewBox="0 0 60 60" width="50" height="50">

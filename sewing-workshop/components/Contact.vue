@@ -2,7 +2,9 @@
   <div
   id="contact"
   class="Contact__main-container">
-    <div class="Contact__center">
+    <div
+    class="Contact__center"
+    data-aos="fade-up">
       <div class="Contact__half-container">
         <span class="Contact__title">
           Kontakt
