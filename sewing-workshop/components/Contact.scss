@@ -80,7 +80,7 @@
       &:after {
         content: '';
         position: relative;
-        bottom: 882px;
+        bottom: 890px;
         width: 0;
         height: 0;
         border-top: solid 40px #fff;
@@ -91,20 +91,24 @@
   }
 
   @media screen and (max-width: 450px) {
+    &__main-container {
+      &:after {
+        content: '';
+        position: relative;
+        bottom: 882px;
+        width: 0;
+        height: 0;
+        border-top: solid 40px #fff;
+        border-left: solid 100vw transparent;
+        border-right: solid 0px transparent;
+      }
+    }
     &__text {
       font-size: 18px;
     }
 
     &__title {
       font-size: 24px;
-    }
-  }
-
-  @media (max-width: 760px) and (orientation:landscape) {
-    &__main-container {
-      &:after {
-        bottom: 890px;
-      }
     }
   }
 }

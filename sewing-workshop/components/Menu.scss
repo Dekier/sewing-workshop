@@ -104,6 +104,7 @@
     margin-top: 25px;
     svg {
       margin: auto;
+      cursor: pointer;
     }
   }
 
@@ -140,9 +141,9 @@
 
     &__main-container {
       height: 80px;
-      width: 100vw;
+      width: 80vw;
       display: flex;
-      right: -100vw;
+      right: -80vw;
 
       &--active {
         right: 0;

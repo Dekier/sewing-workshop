@@ -11,13 +11,11 @@
     display: flex;
     flex-direction: column;
     width: 500px;
-    order: 1;
     height: max-content;
   }
 
   &__right-container {
     display: flex;
-    order: 2;
     flex-direction: column;
     width: 500px;
   }
@@ -68,6 +66,15 @@
     font-weight: 200;
     text-align: center;
     margin: 120px 0;
+  }
+
+  &__offer-title-mobile {
+    display: none;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+    margin: 50px auto;
   }
 
   &__box-container:hover &__image {
@@ -190,17 +197,20 @@
     }
 
     &__right-container {
-      order: 1;
       margin: auto;
     }
 
     &__left-container {
-      order: 2;
       margin: auto;
     }
 
     &__offer-title {
+      display: none;
       margin: 50px auto 120px;
+    }
+
+    &__offer-title-mobile {
+      display: flex;
     }
 
     &__box-info-right {
