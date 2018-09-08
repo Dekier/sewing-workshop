@@ -39,7 +39,8 @@ module.exports = {
   },
   plugins: [
     '~/plugins/vue-scrollto.js',
-    { src: '~/plugins/aos.js', ssr: false }
+    { src: '~/plugins/aos.js', ssr: false },
+    { src: '~plugins/ga.js', ssr: false }
   ],
   css: ["aos/dist/aos.css"]
 }
