@@ -3,11 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Usługi Krawieckie Poznań - przeróbki krawieckie',
+    title: 'Przeróbki Krawieckie, Usługi Krawieckie, Pracownia Krawiecka, Pogotowie Krawieckie w Poznaniu',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Pracownia Krawiecka Magdaleny Dekier, szeroki zakres usług krawieckich w Poznaniu na Piątkowie.' }
+      { hid: 'description', name: 'description', content: 'Pracownia Krawiecka Magdaleny Dekier(1993), oferuje profesjonalne przeróbki sukien, spodni, marynarek, koszul oraz naprawy odzieży. Zapraszamy Ul. Jaroczyńskiego 41 Poznań piątkowo' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo1.ico' },
