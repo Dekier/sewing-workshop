@@ -5,6 +5,7 @@
     justify-content: space-between;
     width: 1200px;
     margin: 100px auto auto;
+    box-sizing: border-box;
   }
 
   &__left-container {
@@ -101,6 +102,7 @@
     overflow: hidden;
     justify-content: space-between;
     transition: all 200ms;
+
     &:hover {
       width: 500px;
       background-color: rgba(255, 255, 255, 0.8);
@@ -121,6 +123,7 @@
     overflow: hidden;
     justify-content: space-between;
     transition: all 200ms;
+
     &:hover {
       width: 500px;
       background-color: rgba(255, 255, 255, 0.8);
@@ -137,13 +140,14 @@
     height: 100%;
     width: 16px;
     background: #fff;
-    font-size: 22px;
+    font-size: 19px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     word-wrap: break-word;
     font-family: 'Muli', sans-serif;
     font-weight: 400;
+
     span {
       color: #006db6;
       text-align: center;
@@ -159,13 +163,14 @@
     height: 100%;
     width: 16px;
     background: #fff;
-    font-size: 22px;
+    font-size: 19px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     word-wrap: break-word;
     font-family: 'Muli', sans-serif;
     font-weight: 400;
+
     span {
       color: #006db6;
       text-align: center;
@@ -179,7 +184,7 @@
     font-family: 'Muli', sans-serif;
     font-weight: 400;
     color: #006db6;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 32px;
   }
 
@@ -191,7 +196,7 @@
 
   @media screen and (max-width: 1000px) {
     &__main-container {
-      width: auto;
+      width: 100%;
       margin: auto;
       flex-direction: column;
     }
@@ -228,6 +233,7 @@
       overflow: hidden;
       justify-content: space-between;
       transition: all 200ms;
+
       &:hover {
         width: 500px;
         background-color: rgba(255, 255, 255, 0.8);
@@ -241,13 +247,14 @@
       height: 100%;
       width: 16px;
       background: #fff;
-      font-size: 22px;
+      font-size: 19px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       word-wrap: break-word;
       font-family: 'Muli', sans-serif;
       font-weight: 400;
+
       span {
         color: #006db6;
         text-align: center;
@@ -266,15 +273,15 @@
 
   @media screen and (max-width: 650px) {
     &__right-container {
-      width: 100vw;
+      width: 100%;
     }
 
     &__left-container {
-      width: 100vw;
+      width: 100%;
     }
 
     &__info {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     &__box-container {
@@ -292,7 +299,8 @@
       top: 10px;
     }
 
-    &__image-container-right, &__image-container-left {
+    &__image-container-right,
+    &__image-container-left {
       width: 350px;
       height: 400px;
     }
@@ -310,11 +318,11 @@
 
   @media screen and (max-width: 450px) {
     &__right-container {
-      width: 100vw;
+      width: 100%;
     }
 
     &__left-container {
-      width: 100vw;
+      width: 100%;
     }
 
     &__box-container {
@@ -332,7 +340,8 @@
       top: 10px;
     }
 
-    &__image-container-right, &__image-container-left {
+    &__image-container-right,
+    &__image-container-left {
       width: 280px;
       height: 300px;
     }
@@ -355,7 +364,8 @@
       right: 8px;
     }
 
-    &__box-name-right, &__box-name-left {
+    &__box-name-right,
+    &__box-name-left {
       font-size: 15px;
       width: 12px;
     }
@@ -367,24 +377,26 @@
 
   @media screen and (max-width: 450px) {
     &__box-container {
-      width: 100vw;
+      width: 100%;
     }
 
     &__box-container:hover &__box-info-left {
-      width: 100vw;
+      width: 100%;
       border-radius: 0;
     }
 
     &__box-container:hover &__box-info-right {
-      width: 100vw;
+      width: 100%;
       border-radius: 0;
     }
 
-    &__image-container-right, &__image-container-left {
-      width: 100vw;
+    &__image-container-right,
+    &__image-container-left {
+      width: 100%;
     }
 
-    &__box-name-left, &__box-name-right {
+    &__box-name-left,
+    &__box-name-right {
       background: transparent;
       right: 15px !important;
     }
