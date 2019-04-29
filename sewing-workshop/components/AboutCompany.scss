@@ -6,7 +6,7 @@
   }
 
   &__article {
-    font-size: 24px;
+    font-size: 18px;
     font-family: 'Muli', sans-serif;
     font-weight: 200;
     line-height: 36px;
@@ -19,6 +19,11 @@
   }
 
   @media screen and (max-width: 1200px) {
+    &__main-container {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
     &__text-container {
       width: auto;
       padding: 0 15px;
@@ -29,4 +34,4 @@
       line-height: 25px;
     }
   }
- }
+}
