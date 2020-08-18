@@ -3,7 +3,6 @@
     <div class="Offer__left-container">
       <h3 class="Offer__offer-title-mobile">Oferta</h3>
       <div
-        data-aos="fade-right"
         v-for="(data, index) in boxesDataRight"
         :key="index"
         class="Offer__box-container"
@@ -32,7 +31,6 @@
     <div class="Offer__right-container">
       <h3 class="Offer__offer-title">Oferta</h3>
       <div
-        data-aos="fade-left"
         v-for="(data, index) in boxesDataLeft"
         :key="index"
         class="Offer__box-container"
