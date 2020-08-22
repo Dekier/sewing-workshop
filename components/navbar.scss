@@ -1,0 +1,125 @@
+.Navbar {
+  &__main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 80px;
+    padding: 0 80px 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 3;
+    background-color: #fff;
+
+    &--active {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    @media (max-width: 600px) {
+      background-color: transparent;
+      box-shadow: unset;
+      &--mobile {
+        height: 100vh;
+        background-color: #fff;
+        z-index: 11;
+      }
+    }
+  }
+
+  &__buttons-container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 80px;
+    @media (max-width: 600px) {
+      display: none;
+      &--mobile {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  }
+
+  &__button {
+    line-height: 80px;
+    margin-left: 30px;
+    font-family: "Muli", sans-serif;
+    cursor: pointer;
+    &:hover {
+      color: #006db6;
+    }
+
+    &--mobile {
+      margin: 0 auto 12px auto;
+      line-height: 62px;
+    }
+  }
+
+  &__hamburger-container {
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 8px;
+    margin: 16px 16px 0 0;
+    height: 30px;
+    width: 30px;
+    flex-direction: column;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 80px;
+    @media (max-width: 600px) {
+      display: flex;
+    }
+  }
+
+  &__hamburger-beam {
+    height: 4px;
+    border-radius: 8px;
+    background-color: #000;
+    display: flex;
+    margin-right: 0;
+    position: absolute;
+    transition: all 300ms;
+
+    &:first-child {
+      width: 25px;
+      margin-left: 5px;
+      transform: translateY(4px);
+    }
+
+    &:nth-child(2) {
+      width: 30px;
+      transform: translateY(14px);
+      opacity: 1;
+    }
+
+    &:nth-child(3) {
+      width: 20px;
+      margin-left: 10px;
+      transform: translateY(24px);
+    }
+
+    &--active {
+      &:first-child {
+        width: 30px;
+        transform: translateY(14px) rotate(-45deg);
+        margin-left: 0;
+      }
+
+      &:nth-child(2) {
+        width: 30px;
+        transform: translateY(14px);
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        width: 30px;
+        margin-left: 0;
+        transform: translateY(14px) rotate(45deg);
+      }
+    }
+  }
+}
