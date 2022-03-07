@@ -145,7 +145,7 @@ export default {
           title: "MUNDURY",
           info: [
             "Zwężanie marynarek, spodni, spódniczek, koszul",
-            "Skracanie, spodni, spódniczek, koszul",
+            "Skracanie spodni, spódniczek, koszul",
             "Przyszywanie emblematów"
           ]
         }
