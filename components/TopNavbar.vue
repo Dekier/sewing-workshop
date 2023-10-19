@@ -88,5 +88,5 @@ const handleScroll = () => {
 </script>
 
 <style lang="scss">
-@import "Navbar";
+@import "navbar";
 </style>
