@@ -1,7 +1,6 @@
 .Intro {
   &__main-container {
     height: 700px;
-    width: calc(100vw - 12px);
     margin: 80px 6px 0;
     background: url("/images/intro3.webp");
     background-position: 50%;
@@ -22,7 +21,6 @@
     margin: 0;
     height: 700px;
     width: 100%;
-    width: calc(100vw - 12px);
     position: absolute;
     top: 0;
     left: 0;
