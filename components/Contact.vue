@@ -36,9 +36,18 @@
     ></iframe>
     <div id="map" class="Contact__footer">
       <span class="Contact__title"> Polecamy: </span>
-      <a target="_blank" href="http://dezalroletypoznan.pl" rel="noopener">
-        <div class="Contact__logo-dezal" />
-      </a>
+      <div class="Contact__row">
+        <a target="_blank" href="https://dezalroletypoznan.pl" rel="noopener">
+          <div class="Contact__logo-dezal" />
+        </a>
+        <a target="_blank" href="http://techbless.pl/" rel="noopener">
+          <img
+            src="/images/tb.svg"
+            class="Contact__logo-tb"
+            alt="logo firmy techbless.pl"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </template>
