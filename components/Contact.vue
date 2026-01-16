@@ -40,11 +40,18 @@
         <a target="_blank" href="https://dezalroletypoznan.pl" rel="noopener">
           <div class="Contact__logo-dezal" />
         </a>
-        <a target="_blank" href="http://techbless.pl/" rel="noopener">
+        <a target="_blank" href="https://techbless.pl" rel="noopener">
           <img
             src="/images/tb.svg"
             class="Contact__logo-tb"
-            alt="logo firmy techbless.pl"
+            alt="Firma techbless.pl - 3d w przeglądarce dla firm"
+          />
+        </a>
+        <a target="_blank" href="https://pravisto.pl" rel="noopener">
+          <img
+            src="/images/pravisto.jpg"
+            class="Contact__logo-tb"
+            alt="Pravisto - Aplikacja dla deweloperów"
           />
         </a>
       </div>
