@@ -3,7 +3,6 @@
   id="company"
   class="AboutCompany__main-container">
     <div
-    data-aos="fade-up"
     class="AboutCompany__text-container">
        <h3 class="AboutCompany__subtitle">
         Moja pasja
