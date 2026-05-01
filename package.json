@@ -19,6 +19,7 @@
     "yarn": "4.10.3"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^2.0.2",
     "sass": "^1.69.4",
     "vue-scrollto": "^2.20.0"
   }
