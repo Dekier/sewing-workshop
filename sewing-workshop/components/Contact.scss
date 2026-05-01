@@ -1,22 +1,11 @@
 .Contact {
   &__main-container {
     min-height: 600px;
-    width: 100vw;
+    width: 100%;
     margin: auto;
     background: linear-gradient(-45deg, rgb(39, 182, 235), rgb(0, 115, 255), rgb(39, 182, 235), rgb(0, 115, 255));
     background-size: 400% 400%;
     animation: Gradient 10s ease infinite;
-
-    &:after {
-      content: '';
-      position: relative;
-      bottom: 450px;
-      width: 0;
-      height: 0;
-      border-top: solid 100px #fff;
-      border-left: solid 100vw transparent;
-      border-right: solid 0px transparent;
-    }
   }
 
   &__center {
@@ -30,13 +19,25 @@
     width: 50%;
     display: flex;
     flex-direction: column;
+
     iframe {
       padding-top: 150px;
     }
   }
 
+  &__logo-dezal {
+    background-position: 50%;
+    background-image: url('/images/dezal.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    cursor: pointer;
+    height: 80px;
+    margin: 0px auto;
+  }
+
   &__text {
-    font-size: 24px;
+    font-size: 18px;
     font-family: 'Muli', sans-serif;
     font-weight: 200;
     color: #fff;
@@ -49,7 +50,7 @@
     font-size: 30px;
     font-weight: 200;
     text-align: center;
-    margin: 120px 0 50px;
+    margin: 120px 0 30px;
     color: #fff;
   }
 
@@ -59,50 +60,26 @@
         bottom: 831px;
       }
     }
+
     &__center {
       flex-direction: column;
-      width: 100vw;
+      width: 100%;
     }
 
     &__half-container {
       margin: auto;
-      width: 100vw;
+      width: 100%;
+
       iframe {
         margin: auto;
         padding-top: 50px;
-        width: 100vw;
-      }
-    }
-  }
-
-  @media screen and (max-width: 650px) {
-    &__main-container {
-      &:after {
-        content: '';
-        position: relative;
-        bottom: 890px;
-        width: 0;
-        height: 0;
-        border-top: solid 40px #fff;
-        border-left: solid 100vw transparent;
-        border-right: solid 0px transparent;
+        width: 100%;
       }
     }
   }
 
   @media screen and (max-width: 450px) {
-    &__main-container {
-      &:after {
-        content: '';
-        position: relative;
-        bottom: 882px;
-        width: 0;
-        height: 0;
-        border-top: solid 40px #fff;
-        border-left: solid 100vw transparent;
-        border-right: solid 0px transparent;
-      }
-    }
+
     &__text {
       font-size: 18px;
     }
@@ -112,14 +89,17 @@
     }
   }
 }
+
 @keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
