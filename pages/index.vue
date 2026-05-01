@@ -1,32 +1,32 @@
+<script setup lang="ts">
+const title = ref(
+  "Pracownia krawiecka - profesjonalne usługi krawieckie poznań - piątkowo"
+);
+const description = ref(
+  "Pracownia Krawiecka Magdaleny Dekier(1993), oferuje profesjonalne przeróbki sukien, spodni, marynarek, koszul oraz naprawy odzieży. Zapraszamy Ul. Jaroczyńskiego 41 Poznań piątkowo"
+);
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
+</script>
+
 <template>
   <div class="Page__main-container">
     <Navbar />
     <Intro />
     <AboutCompany />
     <Offer />
-    <Contact />
+    <client-only>
+      <Contact />
+    </client-only>
   </div>
 </template>
-
-<script>
-import Navbar from "~/components/navbar.vue";
-import Intro from "~/components/Intro.vue";
-import AboutCompany from "~/components/AboutCompany.vue";
-import Offer from "~/components/Offer.vue";
-import Contact from "~/components/Contact.vue";
-
-export default {
-  name: "Page",
-
-  components: {
-    Navbar,
-    Intro,
-    AboutCompany,
-    Offer,
-    Contact
-  }
-};
-</script>
 
 <style lang="scss">
 @import "index";

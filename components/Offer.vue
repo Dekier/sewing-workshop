@@ -66,8 +66,8 @@ export default {
             "Zwężanie",
             "Taliowanie",
             "Zmiana dekoltu",
-            " Wszywanie zamków"
-          ]
+            " Wszywanie zamków",
+          ],
         },
         {
           url: "/images/shirt2.webp",
@@ -76,8 +76,8 @@ export default {
             "Skracanie długości",
             "Skracanie rękawów",
             "Zwężanie",
-            "Taliowanie"
-          ]
+            "Taliowanie",
+          ],
         },
         {
           url: "/images/jeans.webp",
@@ -88,8 +88,8 @@ export default {
             "Zwężanie w pasie",
             "Zwężanie nogawek",
             "Naszywanie Łat",
-            "Skracanie z orginalnym dołem"
-          ]
+            "Skracanie z orginalnym dołem",
+          ],
         },
         {
           url: "/images/coat.webp",
@@ -98,9 +98,18 @@ export default {
             "Skracanie długości",
             "Skracanie rękawów",
             "Zwężanie",
-            "Przyszywanie guzików"
-          ]
-        }
+            "Przyszywanie guzików",
+          ],
+        },
+        {
+          url: "/images/mundur.webp",
+          title: "MUNDURY",
+          info: [
+            "Zwężanie marynarek, spodni, spódniczek, koszul",
+            "Skracanie spodni, spódniczek, koszul",
+            "Przyszywanie emblematów",
+          ],
+        },
       ],
       boxesDataLeft: [
         {
@@ -111,8 +120,8 @@ export default {
             "Wydłużanie",
             "Wszywanie zamków",
             "Zwężanie w pasie",
-            "Zwężanie nogawek"
-          ]
+            "Zwężanie nogawek",
+          ],
         },
         {
           url: "/images/skirt.webp",
@@ -121,8 +130,8 @@ export default {
             "Zwężanie",
             "Skracanie długości",
             "Wszywanie zamków",
-            "Wymiana podszewki"
-          ]
+            "Wymiana podszewki",
+          ],
         },
         {
           url: "/images/jacket.webp",
@@ -132,24 +141,15 @@ export default {
             "Skracanie rękawów",
             "Zwężanie",
             "Taliowanie",
-            "Przyszywanie guzików"
-          ]
+            "Przyszywanie guzików",
+          ],
         },
         {
           url: "/images/room.webp",
           title: "ZASŁONY i OBRUSY",
-          info: ["Skracanie", "Obszywanie"]
+          info: ["Skracanie", "Obszywanie"],
         },
-        {
-          url: "/images/mundur.webp",
-          title: "MUNDURY",
-          info: [
-            "Zwężanie marynarek, spodni, spódniczek, koszul",
-            "Skracanie spodni, spódniczek, koszul",
-            "Przyszywanie emblematów"
-          ]
-        }
-      ]
+      ],
     };
   },
 
@@ -159,18 +159,18 @@ export default {
         return {
           "background-image": `url(${url})`,
           "background-size": "cover",
-          "background-repeat": "no-repeat"
+          "background-repeat": "no-repeat",
         };
       } else {
         return {
           "background-image": `url(${url})`,
           "background-size": "cover",
           "background-repeat": "no-repeat",
-          "background-position": "50%"
+          "background-position": "50%",
         };
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

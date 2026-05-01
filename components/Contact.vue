@@ -1,42 +1,26 @@
 <template>
   <div id="contact" class="Contact__main-container">
     <div class="Contact__center">
-      <span class="Contact__title">
-        Kontakt
-      </span>
+      <span class="Contact__title"> Kontakt </span>
       <div class="Contact__half-container">
         <div class="Contact__half-container-cell">
-          <div class="Contact__half-container-title">
-            Adres
-          </div>
-          <span class="Contact__text">
-            ul. Jaroczyńskiego 41
-          </span>
-          <span class="Contact__text">
-            60-692 Poznań-Piątkowo
-          </span>
+          <div class="Contact__half-container-title">Adres</div>
+          <span class="Contact__text"> ul. Jaroczyńskiego 41 </span>
+          <span class="Contact__text"> 60-692 Poznań-Piątkowo </span>
         </div>
         <div class="Contact__half-container-cell">
-          <div class="Contact__half-container-title">
-            Godziny otwarcia
-          </div>
-          <span class="Contact__text">
-            Poniedziałek: 12:00 - 18:00
-          </span>
-          <span class="Contact__text">
-            Wtorek-Piątek: 9:00 - 17:00
-          </span>
+          <div class="Contact__half-container-title">Godziny otwarcia</div>
+          <span class="Contact__text"> Poniedziałek: 12:00 - 18:00 </span>
+          <span class="Contact__text"> Wtorek-Piątek: 9:00 - 17:00 </span>
         </div>
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">
             Skontaktuj się z nami przez:
           </div>
-          <span class="Contact__text">
+          <a href="tel:691860192" class="Contact__text">
             Telefon: 691 860 192
-          </span>
-          <span class="Contact__text">
-            E-mail: magdalenadekier@op.pl
-          </span>
+          </a>
+          <span class="Contact__text"> E-mail: magdalenadekier@op.pl </span>
         </div>
       </div>
     </div>
@@ -47,13 +31,11 @@
       :width="getWindowSize()"
       height="410"
       frameborder="0"
-      style="border:0"
+      style="border: 0"
       allowfullscreen
     ></iframe>
-    <div class="Contact__footer">
-      <span class="Contact__title">
-        Polecamy:
-      </span>
+    <div id="map" class="Contact__footer">
+      <span class="Contact__title"> Polecamy: </span>
       <a target="_blank" href="http://dezalroletypoznan.pl" rel="noopener">
         <div class="Contact__logo-dezal" />
       </a>
@@ -61,24 +43,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Contact",
+<script setup lang="ts">
+const windowWidth = ref(0);
+onMounted(() => {
+  getWindowSize();
+  window.addEventListener("resize", () => {
+    windowWidth.value = window.innerWidth;
+  });
+});
 
-  data: () => ({
-    windowWidth: 0
-  }),
-
-  mounted() {
-    this.getWindowSize();
-    window.addEventListener("resize", this.getWindowSize);
-  },
-
-  methods: {
-    getWindowSize() {
-      this.windowWidth = window.innerWidth;
-    }
-  }
+const getWindowSize = () => {
+  windowWidth.value = window.innerWidth;
 };
 </script>
 

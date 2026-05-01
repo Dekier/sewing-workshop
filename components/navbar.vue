@@ -3,59 +3,55 @@
     class="Navbar__main-container"
     :class="{
       'Navbar__main-container--active': isActiveShadow,
-      'Navbar__main-container--mobile': isActiveMobile
+      'Navbar__main-container--mobile': isActiveMobile,
     }"
   >
     <div
       class="Navbar__buttons-container"
       :class="{
-        'Navbar__buttons-container--mobile': isActiveMobile
+        'Navbar__buttons-container--mobile': isActiveMobile,
       }"
     >
-      <button
-        type="button"
-        v-scroll-to="scrollTo('company')"
+      <NuxtLink
+        to="#company"
         class="Navbar__button"
         :class="{
-          'Navbar__button--mobile': isActiveMobile
+          'Navbar__button--mobile': isActiveMobile,
         }"
         @click="isActiveMobile = false"
       >
         O Firmie
-      </button>
-      <button
-        type="button"
-        v-scroll-to="scrollTo('offer')"
+      </NuxtLink>
+      <NuxtLink
+        to="#offer"
         class="Navbar__button"
         :class="{
-          'Navbar__button--mobile': isActiveMobile
+          'Navbar__button--mobile': isActiveMobile,
         }"
         @click="isActiveMobile = false"
       >
         Oferta
-      </button>
-      <button
-        type="button"
-        v-scroll-to="scrollTo('contact')"
+      </NuxtLink>
+      <NuxtLink
+        to="#contact"
         class="Navbar__button"
         :class="{
-          'Navbar__button--mobile': isActiveMobile
+          'Navbar__button--mobile': isActiveMobile,
         }"
         @click="isActiveMobile = false"
       >
         Kontakt
-      </button>
-      <button
-        type="button"
-        v-scroll-to="scrollTo('map')"
+      </NuxtLink>
+      <NuxtLink
+        to="#map"
         class="Navbar__button"
         :class="{
-          'Navbar__button--mobile': isActiveMobile
+          'Navbar__button--mobile': isActiveMobile,
         }"
         @click="isActiveMobile = false"
       >
         Jak Dojechać
-      </button>
+      </NuxtLink>
     </div>
     <div
       class="Navbar__hamburger-container"
@@ -77,46 +73,24 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Navbar",
+<script setup lang="ts">
+const isActiveShadow = ref(false);
+const isActiveMobile = ref(false);
+onMounted(() => {
+  window.addEventListener("scroll", () => {
+    isActiveShadow.value = window.scrollY > 10;
+  });
+});
 
-  data() {
-    return {
-      isActiveShadow: false,
-      isActiveMobile: false
-    };
-  },
-
-  mounted() {
-    document.addEventListener("scroll", this.handleScroll);
-  },
-
-  destroyed() {
-    document.removeEventListener("scroll", this.handleScroll);
-  },
-
-  methods: {
-    handleScroll() {
-      this.isActiveShadow = window.scrollY > 10;
-    },
-
-    scrollTo(type) {
-      switch (type) {
-        case "company":
-          return { el: "#company", offset: -100 };
-        case "offer":
-          return { el: "#offer", offset: -100 };
-        case "contact":
-          return { el: "#contact", offset: -100 };
-        case "map":
-          return { el: "#map", offset: -100 };
-      }
-    }
-  }
+const handleScroll = () => {
+  isActiveShadow.value = window.scrollY > 10;
 };
 </script>
 
 <style lang="scss">
-@import "navbar";
+@import "Contact";
+</style>
+
+<style lang="scss">
+@import "Navbar";
 </style>
