@@ -101,4 +101,69 @@
     50% { top: 5px; }
     100% { top: 0; }
   }
+
+  @media screen and (max-width: 650px) {
+    &__main-container {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 500px;
+        margin-left: -500px;
+        width: 0;
+        height: 0;
+        border-bottom: solid 40px #fff;
+        border-left: solid 0px transparent;
+        border-right: solid 100vw transparent;
+      }
+    }
+
+    &__buttons-container  {
+      width: 320px;
+    }
+
+    &__title {
+      h1 {
+        font-size: 32px;
+      }
+    }
+    
+  }
+
+  @media screen and (max-width: 500px) {
+    &__buttons-container  {
+      width: 100vw;
+    }
+
+    &__button-description {
+      font-size: 12px;
+    }
+
+    &__title {
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media screen and (orientation:landscape) {
+    &__main-container {
+      &:after {
+        border-bottom: solid 0px #fff;
+        border-left: solid 0px transparent;
+        border-right: solid 0vw transparent;
+      }
+    }
+
+    &__buttons-container {
+      margin: 18px auto;
+    }
+
+    &__title {
+      margin: 20vh auto auto;
+    }
+  }
 }
