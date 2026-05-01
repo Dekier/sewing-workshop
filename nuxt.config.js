@@ -1,4 +1,7 @@
 module.exports = {
+  mode: "spa",
+
+  target: "static",
   /*
    ** Headers of the page
    */
