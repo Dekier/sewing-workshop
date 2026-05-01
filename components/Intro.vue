@@ -7,7 +7,6 @@
     </div>
     <img
       src="/images/logo_1993.png"
-      :class="{ 'Intro__logo--mobile': scrolled }"
       class="Intro__logo"
       alt="Pracownia krawiecka Magdalena Dekier Intro"
     />
@@ -18,25 +17,9 @@
 export default {
   name: "Intro",
 
-  data() {
-    return {
-      scrolled: false
-    };
-  },
-
-  mounted() {
-    document.addEventListener("scroll", this.handleScroll);
-  },
-
-  destroyed() {
-    document.removeEventListener("scroll", this.handleScroll);
-  },
-
-  methods: {
-    handleScroll() {
-      this.scrolled = window.scrollY > 400;
-    }
-  }
+  data: () => ({
+    scrolled: false
+  })
 };
 </script>
 

@@ -58,7 +58,7 @@ export default {
     return {
       boxesDataRight: [
         {
-          url: "/images/dresses.jpg",
+          url: "/images/dresses.webp",
           title: "SUKNIE",
           info: [
             "Skracanie długości",
@@ -70,7 +70,7 @@ export default {
           ]
         },
         {
-          url: "/images/shirt2.jpg",
+          url: "/images/shirt2.webp",
           title: "KOSZULE",
           info: [
             "Skracanie długości",
@@ -80,7 +80,7 @@ export default {
           ]
         },
         {
-          url: "/images/jeans.jpg",
+          url: "/images/jeans.webp",
           title: "JEANS",
           info: [
             "Skracanie długości",
@@ -92,7 +92,7 @@ export default {
           ]
         },
         {
-          url: "/images/coat.jpg",
+          url: "/images/coat.webp",
           title: "PŁASZCZE",
           info: [
             "Skracanie długości",
@@ -104,7 +104,7 @@ export default {
       ],
       boxesDataLeft: [
         {
-          url: "/images/trausers.jpg",
+          url: "/images/trausers.webp",
           title: "SPODNIE",
           info: [
             "Skracanie długości",
@@ -115,7 +115,7 @@ export default {
           ]
         },
         {
-          url: "/images/skirt.jpg",
+          url: "/images/skirt.webp",
           title: "SPÓDNICE",
           info: [
             "Zwężanie",
@@ -125,7 +125,7 @@ export default {
           ]
         },
         {
-          url: "/images/jacket.jpg",
+          url: "/images/jacket.webp",
           title: "MARYNARKI",
           info: [
             "Skracanie długości",
@@ -136,9 +136,18 @@ export default {
           ]
         },
         {
-          url: "/images/room.jpg",
+          url: "/images/room.webp",
           title: "ZASŁONY i OBRUSY",
           info: ["Skracanie", "Obszywanie"]
+        },
+        {
+          url: "/images/mundur.webp",
+          title: "MUNDURY",
+          info: [
+            "Zwężanie marynarek, spodni, spódniczek, koszul",
+            "Skracanie, spodni, spódniczek, koszul",
+            "Przyszywanie emblematów"
+          ]
         }
       ]
     };

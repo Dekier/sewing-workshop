@@ -12,7 +12,8 @@
         'Navbar__buttons-container--mobile': isActiveMobile
       }"
     >
-      <div
+      <button
+        type="button"
         v-scroll-to="scrollTo('company')"
         class="Navbar__button"
         :class="{
@@ -21,8 +22,9 @@
         @click="isActiveMobile = false"
       >
         O Firmie
-      </div>
-      <div
+      </button>
+      <button
+        type="button"
         v-scroll-to="scrollTo('offer')"
         class="Navbar__button"
         :class="{
@@ -31,8 +33,9 @@
         @click="isActiveMobile = false"
       >
         Oferta
-      </div>
-      <div
+      </button>
+      <button
+        type="button"
         v-scroll-to="scrollTo('contact')"
         class="Navbar__button"
         :class="{
@@ -41,8 +44,9 @@
         @click="isActiveMobile = false"
       >
         Kontakt
-      </div>
-      <div
+      </button>
+      <button
+        type="button"
         v-scroll-to="scrollTo('map')"
         class="Navbar__button"
         :class="{
@@ -51,7 +55,7 @@
         @click="isActiveMobile = false"
       >
         Jak Dojechać
-      </div>
+      </button>
     </div>
     <div
       class="Navbar__hamburger-container"

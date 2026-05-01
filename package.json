@@ -2,7 +2,7 @@
   "name": "sewing-workshop",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "Marcin Dekier <marcin.dekier@appunite.com>",
+  "author": "Marcin Dekier",
   "private": true,
   "scripts": {
     "dev": "nuxt",
