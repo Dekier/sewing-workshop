@@ -36,7 +36,7 @@
     text-align: center;
     color: #fff;
     z-index: 10;
-    margin: 30vh auto auto;
+    margin: 20vh auto auto;
     font-family: 'Cinzel Decorative', cursive;
     h1 {
       font-size: 40px;
@@ -50,8 +50,26 @@
 
   &__logo {
     position: fixed;
-    left: 0px;
-    top: 20px;
+    background: url('~/static/images/logotype.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 240px;
+    width: 370px;
+    left: 0;
+    right: 0;
+    top: 20vh;
+    bottom: 0;
+    z-index: 1000;
+    margin: auto;
+
+    &--mobile {
+      right: auto;
+      bottom: auto;
+      top: 20px;
+      left: -25px;
+      height: 105px;
+      width: 171px;
+    }
   }
 
   &__buttons-container {
@@ -171,5 +189,18 @@
     &__title {
       margin: 20vh auto auto;
     }
+  }
+
+  @media (max-width: 1000px) and (orientation:landscape) {
+
+    &__logo {
+      right: auto;
+      bottom: auto;
+      top: 20px;
+      left: -25px;
+      height: 105px;
+      width: 171px;
+    }
+
   }
 }

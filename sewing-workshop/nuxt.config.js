@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Pracownia Krawiecka Magdaleny Dekier, szeroki zakres usług krawieckich w Poznaniu na Piątkowie.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/logo1.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Cinzel+Decorative' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Muli:200,400' }
     ]
@@ -39,5 +39,7 @@ module.exports = {
   },
   plugins: [
     '~/plugins/vue-scrollto.js',
-  ]
+    { src: '~/plugins/aos.js', ssr: false }
+  ],
+  css: ["aos/dist/aos.css"]
 }

@@ -10,6 +10,9 @@
       </h2>
     </div>
     <div
+    :class="{'Intro__logo--mobile': scrolled}"
+    class="Intro__logo"/>
+    <div
     class="Intro__buttons-container"
     @mouseover="mouseHoverBtnContainer"
     @mouseleave="mouseLeaveBtnContainer">
@@ -113,11 +116,23 @@ export default {
       fillPathYellow: '#fff',
       fillPathGreen: '#fff',
       fillPathGrey: '#fff',
-      fillPathBlue: '#fff'
+      fillPathBlue: '#fff',
+      scrolled: false
     }
   },
 
+  mounted () {
+    document.addEventListener('scroll', this.handleScroll);
+  },
+
+  destroyed () {
+    document.removeEventListener('scroll', this.handleScroll);
+  },
+
   methods: {
+    handleScroll () {
+      this.scrolled = window.scrollY > 80;
+    },
     mouseHoverBtnContainer () {
       this.fillPathRed = '#F48B8B'
       this.fillPathYellow = '#F4DA8B'
