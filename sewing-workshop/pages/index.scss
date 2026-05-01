@@ -3,4 +3,19 @@
     display: flex;
     flex-direction: column;
   }
+
+  &__logo {
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    z-index: 1001;
+  }
+
+  @media screen and (max-width: 650px) {
+
+    &__logo {
+      width: 35px;
+    }
+  }
 }
