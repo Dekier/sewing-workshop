@@ -1,0 +1,59 @@
+.Contact {
+  &__main-container {
+    height: 600px;
+    width: 100vw;
+    margin: auto;
+    background: #006db6;
+
+    &:after {
+      content: '';
+      position: relative;
+      bottom: 450px;
+      width: 0;
+      height: 0;
+      border-top: solid 100px #fff;
+      border-left: solid 100vw transparent;
+      border-right: solid 0px transparent;
+    }
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    margin: auto;
+  }
+
+  &__half-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    iframe {
+      padding-top: 150px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    font-family: 'Muli', sans-serif;
+    font-weight: 200;
+    color: #fff;
+    line-height: 36px;
+    margin-left: 200px;
+  }
+
+  &__title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
+    margin: 120px 0 80px;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 1200px) {
+    &__center {
+      flex-direction: column;
+    }
+  }
+}

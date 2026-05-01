@@ -149,7 +149,7 @@
     }
   }
 
-  @media screen and (orientation:landscape) {
+  @media (max-width: 760px) and (orientation:landscape) {
     &__main-container {
       &:after {
         border-bottom: solid 0px #fff;

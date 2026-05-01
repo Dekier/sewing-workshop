@@ -1,7 +1,7 @@
 <template>
   <div class="Intro__main-container">
     <div class="Intro__black-background" />
-    <svg class="Intro__logo" width="200px" height="200px" viewBox="0 0 29700 21000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+    <!-- <svg class="Intro__logo" width="200px" height="200px" viewBox="0 0 29700 21000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
       <defs>
         <font id="FontID5" horiz-adv-x="599" font-weight="400" fill-rule="nonzero">
           <font-face font-family="Tahoma"/>
@@ -226,7 +226,7 @@
         </text>
         <path fill="none" stroke="#2b2a29" stroke-width="20" d="M31446-422h29718v20955H31446z"/>
       </g>
-    </svg>
+    </svg> -->
     <div class="Intro__title">
       <h1>
         Pracownia Krawiecka

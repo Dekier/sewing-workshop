@@ -3,6 +3,7 @@
     <Intro/>
     <AboutCompany/>
     <Offer/>
+    <Contact/>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Intro from '~/components/Intro.vue'
 import AboutCompany from '~/components/AboutCompany.vue'
 import Offer from '~/components/Offer.vue'
+import Contact from '~/components/Contact.vue'
 
 export default {
   name: 'Page',
@@ -17,7 +19,8 @@ export default {
   components: {
     Intro,
     AboutCompany,
-    Offer
+    Offer,
+    Contact
   }
 }
 </script>
