@@ -23,7 +23,7 @@
   }
 
   &__box-container {
-    width: 520px;
+    width: 507px;
     margin: auto;
     height: 500px;
     margin-bottom: 70px;
@@ -352,6 +352,31 @@
 
     &__box-container:hover &__box-name-right {
       right: 8px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    &__box-container {
+      width: 100vw;
+    }
+
+    &__box-container:hover &__box-info-left {
+      width: 100vw;
+      border-radius: 0;
+    }
+
+    &__box-container:hover &__box-info-right {
+      width: 100vw;
+      border-radius: 0;
+    }
+
+    &__image-container-right, &__image-container-left {
+      width: 100vw;
+    }
+
+    &__box-name-left, &__box-name-right {
+      background: transparent;
+      right: 15px !important;
     }
   }
 }
