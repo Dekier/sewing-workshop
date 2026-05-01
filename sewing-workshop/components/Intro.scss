@@ -1,0 +1,87 @@
+.Intro {
+  &__main-container {
+    height: 100vh;
+    width: 100vw;
+    background: url('~/static/images/background.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__black-background {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &__title {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+    margin: 15vh auto auto;
+    font-family: 'Cinzel Decorative', cursive;
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 30px;
+      font-family: 'Muli', sans-serif;
+      font-weight: 200;
+    }
+  }
+
+  &__buttons-container {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 12px;
+  }
+
+  &__buttons-container:hover &__button-description {
+    opacity: 1;
+  }
+
+  &__button {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    svg {
+      top: 0;
+      position: relative;
+      transition: all 400ms;
+      margin: auto;
+    }
+
+    &-description {
+      color: #fff;
+      font-family: 'Muli', sans-serif;
+      font-weight: 200;
+      text-align: center;
+      opacity: 0;
+      transition: all 400ms;
+    }
+
+    &:hover svg {
+      animation: hoverOnBtn 1s infinite;
+    }
+  }
+
+  @keyframes hoverOnBtn {
+    0%   { top: 0; }
+    50% { top: 5px; }
+    100% { top: 0; }
+  }
+}
