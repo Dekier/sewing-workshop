@@ -14,14 +14,11 @@
   },
   "dependencies": {
     "aos": "^2.3.3",
-    "less": "^3.5.3",
-    "less-loader": "^5.0.0",
     "node-sass": "^4.9.2",
     "nuxt": "^2.14.1",
     "nuxt-sass-resources-loader": "^2.0.2",
     "sass-loader": "^7.0.3",
     "sass-resources-loader": "^2.0.0",
-    "vue-lazyload": "^1.2.6",
     "vue-scrollto": "^2.11.0"
   },
   "devDependencies": {

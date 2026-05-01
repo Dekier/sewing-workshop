@@ -1,33 +1,60 @@
 .Contact {
   &__main-container {
-    min-height: 600px;
     width: 100%;
     margin: auto;
-    background: linear-gradient(-45deg, rgb(39, 182, 235), rgb(0, 115, 255), rgb(39, 182, 235), rgb(0, 115, 255));
-    background-size: 400% 400%;
-    animation: Gradient 10s ease infinite;
+    display: flex;
+    flex-direction: column;
   }
 
   &__center {
     display: flex;
-    flex-direction: row;
-    width: 1200px;
-    margin: auto;
+    flex-direction: column;
+    margin: 60px auto 60px;
+    justify-content: space-between;
+    max-width: 1200px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
   }
 
   &__half-container {
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 32px;
+    background-color: #fff;
+    max-width: 1200px;
+    width: 100%;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+
+  &__half-container-cell {
     display: flex;
     flex-direction: column;
-
-    iframe {
-      padding-top: 150px;
+    width: 300px;
+    @media (max-width: 1200px) {
+      margin: 0 auto 32px;
     }
+
+    @media (max-width: 324px) {
+      width: 100%;
+    }
+  }
+
+  &__half-container-title {
+    font-family: "Muli", sans-serif;
+    font-size: 18px;
+    margin-bottom: 24px;
+    text-align: center;
   }
 
   &__logo-dezal {
     background-position: 50%;
-    background-image: url('/images/dezal.jpg');
+    background-image: url("/images/dezal.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     width: 150px;
@@ -38,68 +65,26 @@
 
   &__text {
     font-size: 18px;
-    font-family: 'Muli', sans-serif;
+    font-family: "Muli", sans-serif;
     font-weight: 200;
-    color: #fff;
+    color: #000;
     line-height: 45px;
     text-align: center;
   }
 
   &__title {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: "Charmonman", cursive;
     font-size: 30px;
     font-weight: 200;
     text-align: center;
-    margin: 120px 0 30px;
-    color: #fff;
+    margin: 0 0 30px;
+    color: #000;
   }
 
-  @media screen and (max-width: 1200px) {
-    &__main-container {
-      &:after {
-        bottom: 831px;
-      }
-    }
-
-    &__center {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    &__half-container {
-      margin: auto;
-      width: 100%;
-
-      iframe {
-        margin: auto;
-        padding-top: 50px;
-        width: 100%;
-      }
-    }
-  }
-
-  @media screen and (max-width: 450px) {
-
-    &__text {
-      font-size: 18px;
-    }
-
-    &__title {
-      font-size: 24px;
-    }
-  }
-}
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-
-  50% {
-    background-position: 100% 50%
-  }
-
-  100% {
-    background-position: 0% 50%
+  &__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
   }
 }

@@ -1,33 +1,33 @@
 <template>
   <div class="Page__main-container">
-    <Intro/>
-    <AboutCompany/>
-    <Offer/>
-    <Contact/>
-    <Menu/>
+    <Navbar />
+    <Intro />
+    <AboutCompany />
+    <Offer />
+    <Contact />
   </div>
 </template>
 
 <script>
-import Intro from '~/components/Intro.vue'
-import AboutCompany from '~/components/AboutCompany.vue'
-import Offer from '~/components/Offer.vue'
-import Contact from '~/components/Contact.vue'
-import Menu from '~/components/Menu.vue'
+import Navbar from "~/components/navbar.vue";
+import Intro from "~/components/Intro.vue";
+import AboutCompany from "~/components/AboutCompany.vue";
+import Offer from "~/components/Offer.vue";
+import Contact from "~/components/Contact.vue";
 
 export default {
-  name: 'Page',
+  name: "Page",
 
   components: {
+    Navbar,
     Intro,
     AboutCompany,
     Offer,
-    Contact,
-    Menu
+    Contact
   }
-}
+};
 </script>
 
 <style lang="scss">
-  @import 'index';
+@import "index";
 </style>

@@ -1,57 +1,48 @@
 <template>
   <div id="offer" class="Offer__main-container">
-    <div class="Offer__left-container">
-      <h3 class="Offer__offer-title-mobile">Oferta</h3>
-      <div
-        v-for="(data, index) in boxesDataRight"
-        :key="index"
-        class="Offer__box-container"
-      >
-        <div class="Offer__image-container-left">
-          <div :style="backgroundStyle(data.url)" class="Offer__image" />
-        </div>
-        <div class="Offer__box-info-left">
-          <div class="Offer__box-info">
-            <span
-              class="Offer__info"
-              v-for="(info, index) in data.info"
-              :key="index"
-            >
-              - {{ info }}
-            </span>
+    <h3 class="Offer__offer-title">Oferta</h3>
+    <div class="Offer__center-container">
+      <div class="Offer__left-container">
+        <div
+          v-for="(data, index) in boxesDataRight"
+          :key="index"
+          class="Offer__box-container"
+        >
+          <div class="Offer__image-container-left">
+            <div :style="backgroundStyle(data.url)" class="Offer__image" />
           </div>
-          <div class="Offer__box-name-left">
-            <span>
-              {{ data.title }}
-            </span>
+          <div class="Offer__box-info-left">
+            <div class="Offer__box-name-left">{{ data.title }}</div>
+            <div class="Offer__box-info">
+              <span
+                class="Offer__info"
+                v-for="(info, index) in data.info"
+                :key="index"
+                >• {{ info }}</span
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="Offer__right-container">
-      <h3 class="Offer__offer-title">Oferta</h3>
-      <div
-        v-for="(data, index) in boxesDataLeft"
-        :key="index"
-        class="Offer__box-container"
-      >
-        <div class="Offer__image-container-right">
-          <div :style="backgroundStyle(data.url)" class="Offer__image" />
-        </div>
-        <div class="Offer__box-info-right">
-          <div class="Offer__box-name-right">
-            <span>
-              {{ data.title }}
-            </span>
+      <div class="Offer__right-container">
+        <div
+          v-for="(data, index) in boxesDataLeft"
+          :key="index"
+          class="Offer__box-container"
+        >
+          <div class="Offer__image-container-right">
+            <div :style="backgroundStyle(data.url)" class="Offer__image" />
           </div>
-          <div class="Offer__box-info">
-            <span
-              class="Offer__info"
-              v-for="(info, index) in data.info"
-              :key="index"
-            >
-              - {{ info }}
-            </span>
+          <div class="Offer__box-info-right">
+            <div class="Offer__box-name-right">{{ data.title }}</div>
+            <div class="Offer__box-info">
+              <span
+                class="Offer__info"
+                v-for="(info, index) in data.info"
+                :key="index"
+                >• {{ info }}</span
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -70,11 +61,11 @@ export default {
           url: "/images/dresses.jpg",
           title: "SUKNIE",
           info: [
-            "Skracanie Długości",
-            "Skracanie Rękawów",
+            "Skracanie długości",
+            "Skracanie rękawów",
             "Zwężanie",
             "Taliowanie",
-            "Zmiana Dekoltu",
+            "Zmiana dekoltu",
             " Wszywanie zamków"
           ]
         },
@@ -82,8 +73,8 @@ export default {
           url: "/images/shirt2.jpg",
           title: "KOSZULE",
           info: [
-            "Skracanie Długości",
-            "Skracanie Rękawów",
+            "Skracanie długości",
+            "Skracanie rękawów",
             "Zwężanie",
             "Taliowanie"
           ]
@@ -92,22 +83,22 @@ export default {
           url: "/images/jeans.jpg",
           title: "JEANS",
           info: [
-            "Skracanie Długości",
-            "Skracanie z Orginalnym Dołem",
+            "Skracanie długości",
             "Wszywanie zamków",
-            "Zwężanie w Pasie",
-            "Zwężanie Nogawek",
-            "Naszywanie Łat"
+            "Zwężanie w pasie",
+            "Zwężanie nogawek",
+            "Naszywanie Łat",
+            "Skracanie z orginalnym dołem"
           ]
         },
         {
           url: "/images/coat.jpg",
           title: "PŁASZCZE",
           info: [
-            "Skracanie Długości",
-            "Skracanie Rękawów",
+            "Skracanie długości",
+            "Skracanie rękawów",
             "Zwężanie",
-            "Pszyszywanie Guzików"
+            "Pszyszywanie guzików"
           ]
         }
       ],
@@ -116,11 +107,11 @@ export default {
           url: "/images/trausers.jpg",
           title: "SPODNIE",
           info: [
-            "Skracanie Długości",
+            "Skracanie długości",
             "Wydłużanie",
-            "Wszywanie Zamków",
-            "Zwężanie w Pasie",
-            "Zwężanie Nogawek"
+            "Wszywanie zamków",
+            "Zwężanie w pasie",
+            "Zwężanie nogawek"
           ]
         },
         {
@@ -128,20 +119,20 @@ export default {
           title: "SPÓDNICE",
           info: [
             "Zwężanie",
-            "Skracanie Długości",
-            "Wszywanie Zamków",
-            "Wymiana Podszewki"
+            "Skracanie długości",
+            "Wszywanie zamków",
+            "Wymiana podszewki"
           ]
         },
         {
           url: "/images/jacket.jpg",
           title: "MARYNARKI",
           info: [
-            "Skracanie Długości",
-            "Skracanie Rękawów",
+            "Skracanie długości",
+            "Skracanie rękawów",
             "Zwężanie",
             "Taliowanie",
-            "Przyszywanie Guzików"
+            "Przyszywanie guzików"
           ]
         },
         {
@@ -177,5 +168,3 @@ export default {
 <style lang="scss">
 @import "Offer";
 </style>
-
-

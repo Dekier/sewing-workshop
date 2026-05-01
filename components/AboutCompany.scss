@@ -1,19 +1,18 @@
 .AboutCompany {
-
   &__text-container {
     width: 1200px;
-    margin: 50px auto 100px;
+    margin: 120px auto;
   }
 
   &__article {
     font-size: 18px;
-    font-family: 'Muli', sans-serif;
+    font-family: "Muli", sans-serif;
     font-weight: 200;
     line-height: 36px;
   }
 
   &__subtitle {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: "Charmonman", cursive;
     font-size: 30px;
     font-weight: 200;
   }
@@ -32,6 +31,9 @@
     &__article {
       font-size: 16px;
       line-height: 25px;
+    }
+    &__text-container {
+      margin-top: 60px;
     }
   }
 }
