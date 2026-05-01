@@ -18,7 +18,7 @@ useHead({
 
 <template>
   <div class="Page__main-container">
-    <Navbar />
+    <TopNavbar />
     <Intro />
     <AboutCompany />
     <Offer />
