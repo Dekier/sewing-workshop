@@ -15,7 +15,8 @@
     "vue-router": "^4.2.5"
   },
   "volta": {
-    "node": "19.7.0"
+    "node": "19.7.0",
+    "yarn": "4.10.3"
   },
   "dependencies": {
     "sass": "^1.69.4",

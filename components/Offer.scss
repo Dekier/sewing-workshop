@@ -6,7 +6,7 @@
     margin: 0 auto 50px;
     box-sizing: border-box;
     @media (max-width: 1200px) {
-      width: 100vw;
+      width: 100%;
       padding: 0 12px;
     }
   }
@@ -51,8 +51,9 @@
   &__box-container {
     margin-bottom: 70px;
     position: relative;
-    box-shadow: 3px 5px 10px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    border: 1px solid #dfdfdf;
+    border-radius: 16px;
+    overflow: hidden;
     @media (max-width: 524px) {
       width: 100%;
     }
