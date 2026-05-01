@@ -1,5 +1,7 @@
 <template>
-  <div class="Offer__main-container">
+  <div
+  id="offer"
+  class="Offer__main-container">
     <div class="Offer__left-container">
       <div
       v-for="(data, index) in boxesData"
