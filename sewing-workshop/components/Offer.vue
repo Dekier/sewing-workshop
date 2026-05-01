@@ -5,6 +5,7 @@
     <div class="Offer__left-container">
       <h3 class="Offer__offer-title-mobile">Oferta</h3>
       <div
+      data-aos="fade-right"
       v-for="(data, index) in boxesData"
       :key="index"
       v-if="index < 4"
@@ -34,6 +35,7 @@
     <div class="Offer__right-container">
       <h3 class="Offer__offer-title">Oferta</h3>
       <div
+      data-aos="fade-left"
       v-for="(data, index) in boxesData"
       :key="index"
       v-if="index > 3"
