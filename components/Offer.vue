@@ -98,7 +98,7 @@ export default {
             "Skracanie długości",
             "Skracanie rękawów",
             "Zwężanie",
-            "Pszyszywanie guzików"
+            "Przyszywanie guzików"
           ]
         }
       ],

@@ -7,7 +7,7 @@
       <div class="Contact__half-container">
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">
-            Address
+            Adres
           </div>
           <span class="Contact__text">
             ul. Jaroczyńskiego 41
