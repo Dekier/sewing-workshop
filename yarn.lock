@@ -706,6 +706,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@googlemaps/js-api-loader@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@googlemaps/js-api-loader@npm:2.0.2"
+  dependencies:
+    "@types/google.maps": "npm:^3.53.1"
+  checksum: 10c0/1bd8f1e117145de83a7cfca7c05cf4cfb2d9095d507497f8b0e590be94de3a6a27a7a3c80801de6f58d77e5a2ce169a6b6d9c9d0dfc20ea1039d890226318c46
+  languageName: node
+  linkType: hard
+
 "@ioredis/commands@npm:^1.1.1":
   version: 1.2.0
   resolution: "@ioredis/commands@npm:1.2.0"
@@ -1330,6 +1339,13 @@ __metadata:
   version: 1.0.3
   resolution: "@types/estree@npm:1.0.3"
   checksum: 10c0/5171f467fdd77852e28d7eec575222bc6c900e117a44e916a5ff65807ae8e1ed15f57d21e8954d6bd532e37c49a8ecfee730fcb152b7b44234d38681978b2caa
+  languageName: node
+  linkType: hard
+
+"@types/google.maps@npm:^3.53.1":
+  version: 3.64.0
+  resolution: "@types/google.maps@npm:3.64.0"
+  checksum: 10c0/59895cade8d70d9d0b2a40b0edeea683555d117cfb4467079357eb8cc81a5e29358a6b22d4c1e3ce2618e3125ecf8853b9a108ada11a33c47f01b8db51a65d5f
   languageName: node
   linkType: hard
 
@@ -4550,6 +4566,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nuxt-app@workspace:."
   dependencies:
+    "@googlemaps/js-api-loader": "npm:^2.0.2"
     nuxt: "npm:^3.7.4"
     sass: "npm:^1.69.4"
     vue: "npm:^3.3.4"
