@@ -4,42 +4,51 @@
     <div class="Offer__center-container">
       <div class="Offer__left-container">
         <div
-          v-for="(data, index) in boxesDataRight"
-          :key="index"
+          v-for="(data, index) in boxesDataLeft"
+          :key="'left-' + index"
           class="Offer__box-container"
+          :style="{ order: index * 2 }"
         >
           <div class="Offer__image-container-left">
-            <div :style="backgroundStyle(data.url)" class="Offer__image" />
+            <div
+              :style="backgroundStyle(data.url, index)"
+              class="Offer__image"
+            />
           </div>
           <div class="Offer__box-info-left">
             <div class="Offer__box-name-left">{{ data.title }}</div>
             <div class="Offer__box-info">
               <span
                 class="Offer__info"
-                v-for="(info, index) in data.info"
-                :key="index"
+                v-for="(info, infoIndex) in data.info"
+                :key="infoIndex"
                 >• {{ info }}</span
               >
             </div>
           </div>
         </div>
       </div>
+
       <div class="Offer__right-container">
         <div
-          v-for="(data, index) in boxesDataLeft"
-          :key="index"
+          v-for="(data, index) in boxesDataRight"
+          :key="'right-' + index"
           class="Offer__box-container"
+          :style="{ order: index * 2 + 1 }"
         >
           <div class="Offer__image-container-right">
-            <div :style="backgroundStyle(data.url)" class="Offer__image" />
+            <div
+              :style="backgroundStyle(data.url, index)"
+              class="Offer__image"
+            />
           </div>
           <div class="Offer__box-info-right">
             <div class="Offer__box-name-right">{{ data.title }}</div>
             <div class="Offer__box-info">
               <span
                 class="Offer__info"
-                v-for="(info, index) in data.info"
-                :key="index"
+                v-for="(info, infoIndex) in data.info"
+                :key="infoIndex"
                 >• {{ info }}</span
               >
             </div>
@@ -56,7 +65,8 @@ export default {
 
   data() {
     return {
-      boxesDataRight: [
+      // Zmieniono nazwę na Left, bo idzie do lewego kontenera
+      boxesDataLeft: [
         {
           url: "/images/dresses.webp",
           title: "SUKNIE",
@@ -66,7 +76,7 @@ export default {
             "Zwężanie",
             "Taliowanie",
             "Zmiana dekoltu",
-            " Wszywanie zamków",
+            "Wszywanie zamków",
           ],
         },
         {
@@ -105,7 +115,8 @@ export default {
           info: ["Skracanie", "Obszywanie"],
         },
       ],
-      boxesDataLeft: [
+      // Zmieniono nazwę na Right, bo idzie do prawego kontenera
+      boxesDataRight: [
         {
           url: "/images/jacket.webp",
           title: "MARYNARKI",
