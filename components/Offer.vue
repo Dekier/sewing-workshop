@@ -69,6 +69,45 @@ export default {
             " Wszywanie zamków",
           ],
         },
+
+        {
+          url: "/images/jacket.webp",
+          title: "MARYNARKI",
+          info: [
+            "Skracanie długości",
+            "Skracanie rękawów",
+            "Zwężanie ramion",
+            "Taliowanie",
+            "Przyszywanie guzików",
+          ],
+        },
+        {
+          url: "/images/skirt.webp",
+          title: "SPÓDNICE",
+          info: [
+            "Zwężanie",
+            "Skracanie długości",
+            "Wszywanie zamków",
+            "Wymiana podszewki",
+          ],
+        },
+        {
+          url: "/images/coat.webp",
+          title: "PŁASZCZE",
+          info: [
+            "Skracanie długości",
+            "Skracanie rękawów",
+            "Zwężanie",
+            "Przyszywanie guzików",
+          ],
+        },
+        {
+          url: "/images/room.webp",
+          title: "ZASŁONY i OBRUSY",
+          info: ["Skracanie", "Obszywanie"],
+        },
+      ],
+      boxesDataLeft: [
         {
           url: "/images/shirt2.webp",
           title: "KOSZULE",
@@ -77,6 +116,17 @@ export default {
             "Skracanie rękawów",
             "Zwężanie",
             "Taliowanie",
+          ],
+        },
+        {
+          url: "/images/trausers.webp",
+          title: "SPODNIE",
+          info: [
+            "Skracanie długości",
+            "Wydłużanie",
+            "Wszywanie zamków",
+            "Zwężanie w pasie",
+            "Zwężanie nogawek",
           ],
         },
         {
@@ -92,16 +142,6 @@ export default {
           ],
         },
         {
-          url: "/images/coat.webp",
-          title: "PŁASZCZE",
-          info: [
-            "Skracanie długości",
-            "Skracanie rękawów",
-            "Zwężanie",
-            "Przyszywanie guzików",
-          ],
-        },
-        {
           url: "/images/mundur.webp",
           title: "MUNDURY",
           info: [
@@ -109,45 +149,6 @@ export default {
             "Skracanie spodni, spódniczek, koszul",
             "Przyszywanie emblematów",
           ],
-        },
-      ],
-      boxesDataLeft: [
-        {
-          url: "/images/trausers.webp",
-          title: "SPODNIE",
-          info: [
-            "Skracanie długości",
-            "Wydłużanie",
-            "Wszywanie zamków",
-            "Zwężanie w pasie",
-            "Zwężanie nogawek",
-          ],
-        },
-        {
-          url: "/images/skirt.webp",
-          title: "SPÓDNICE",
-          info: [
-            "Zwężanie",
-            "Skracanie długości",
-            "Wszywanie zamków",
-            "Wymiana podszewki",
-          ],
-        },
-        {
-          url: "/images/jacket.webp",
-          title: "MARYNARKI",
-          info: [
-            "Skracanie długości",
-            "Skracanie rękawów",
-            "Zwężanie",
-            "Taliowanie",
-            "Przyszywanie guzików",
-          ],
-        },
-        {
-          url: "/images/room.webp",
-          title: "ZASŁONY i OBRUSY",
-          info: ["Skracanie", "Obszywanie"],
         },
       ],
     };
