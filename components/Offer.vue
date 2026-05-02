@@ -69,16 +69,14 @@ export default {
             " Wszywanie zamków",
           ],
         },
-
         {
-          url: "/images/jacket.webp",
-          title: "MARYNARKI",
+          url: "/images/shirt2.webp",
+          title: "KOSZULE",
           info: [
             "Skracanie długości",
             "Skracanie rękawów",
-            "Zwężanie ramion",
+            "Zwężanie",
             "Taliowanie",
-            "Przyszywanie guzików",
           ],
         },
         {
@@ -109,13 +107,14 @@ export default {
       ],
       boxesDataLeft: [
         {
-          url: "/images/shirt2.webp",
-          title: "KOSZULE",
+          url: "/images/jacket.webp",
+          title: "MARYNARKI",
           info: [
             "Skracanie długości",
             "Skracanie rękawów",
-            "Zwężanie",
+            "Zwężanie ramion",
             "Taliowanie",
+            "Przyszywanie guzików",
           ],
         },
         {
