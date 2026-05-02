@@ -147,7 +147,7 @@ export default {
             "Wszywanie zamków",
             "Zwężanie w pasie",
             "Zwężanie nogawek",
-            "Naszywanie Łat",
+            "Naszywanie łat",
             "Skracanie z orginalnym dołem",
           ],
         },
