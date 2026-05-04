@@ -1,7 +1,8 @@
 .AboutCompany {
   &__text-container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 120px auto;
+    padding: 0 16px;
   }
 
   &__article {

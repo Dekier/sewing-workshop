@@ -5,13 +5,18 @@
       <div class="Contact__half-container">
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">Adres:</div>
-          <span class="Contact__text"> ul. Jaroczyńskiego 41 </span>
-          <span class="Contact__text"> 60-692 Poznań-Piątkowo </span>
+          <div class="Contact__text">ul. Jaroczyńskiego 41</div>
+          <div class="Contact__text">60-692 Poznań-Piątkowo</div>
         </div>
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">Godziny otwarcia:</div>
-          <span class="Contact__text"> Poniedziałek: 12:00 - 18:00 </span>
-          <span class="Contact__text"> Wtorek-Piątek: 9:00 - 17:00 </span>
+          <div class="Contact__text">
+            Poniedziałek: <span>9:00 - 18:00</span>
+          </div>
+          <div class="Contact__text">Wtorek: <span>8:00 - 17:00</span></div>
+          <div class="Contact__text">Środa: <span>8:00 - 17:00</span></div>
+          <div class="Contact__text">Czwartek: <span>9:00 - 18:00</span></div>
+          <div class="Contact__text">Piątek: <span>Zamknięte</span></div>
         </div>
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">
@@ -20,7 +25,7 @@
           <a href="tel:691860192" class="Contact__text">
             Telefon: 691 860 192
           </a>
-          <span class="Contact__text"> E-mail: magdalenadekier@op.pl </span>
+          <div class="Contact__text">E-mail: magdalenadekier@op.pl</div>
         </div>
       </div>
     </div>

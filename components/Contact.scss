@@ -13,6 +13,7 @@
     justify-content: space-between;
     max-width: 1200px;
     box-sizing: border-box;
+    padding: 0 16px;
     width: 100%;
     background-color: #fff;
   }
@@ -22,7 +23,7 @@
     flex-direction: row;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 32px;
+    padding: 32px 0;
     background-color: #fff;
     max-width: 1200px;
     width: 100%;
@@ -37,7 +38,7 @@
     flex-direction: column;
     width: 300px;
     @media (max-width: 1200px) {
-      margin: 0 auto 32px;
+      margin: 0 0 32px;
     }
 
     @media (max-width: 324px) {
@@ -49,7 +50,6 @@
     font-family: "Muli", sans-serif;
     font-size: 22px;
     margin-bottom: 12px;
-    text-align: center;
   }
 
   &__logo-dezal {
@@ -78,24 +78,25 @@
     font-weight: 200;
     color: #000;
     line-height: 45px;
-    text-align: center;
     text-decoration: none;
+    span {
+      font-weight: 600;
+    }
   }
 
   &__title {
     font-family: "Charmonman", cursive;
     font-size: 30px;
     font-weight: 200;
-    text-align: center;
     margin: 32px 0 12px;
     color: #000;
   }
 
   &__footer {
-    width: 100%;
     display: flex;
     flex-direction: column;
     margin: 30px 0;
+    padding: 0 16px;
   }
 
   &__row {
