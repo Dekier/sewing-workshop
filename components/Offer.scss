@@ -87,6 +87,7 @@
     }
 
     @include for-phone-only {
+      margin: 0 0 32px;
       @include text(26px, left, $black-400, 500);
     }
   }
@@ -132,7 +133,7 @@
     @include for-phone-only {
       @include text(26px, center, $black-400, 500);
     }
-    @include text(32px, center, $black-400, 500);
+    @include text(28px, center, $black-400, 500);
     margin: 24px 0;
   }
 

@@ -1,3 +1,5 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
 .Contact {
   &__main-container {
     width: 100%;
@@ -9,7 +11,7 @@
   &__center {
     display: flex;
     flex-direction: column;
-    margin: 60px auto 60px;
+    margin: 90px auto 90px;
     justify-content: space-between;
     max-width: 1472px;
     box-sizing: border-box;
@@ -47,8 +49,8 @@
   }
 
   &__half-container-title {
-    font-size: 22px;
     margin-bottom: 12px;
+    @include text(22px, left, $black-400, 600);
   }
 
   &__logo-dezal {
@@ -83,10 +85,16 @@
   }
 
   &__title {
-    font-size: 30px;
-    font-weight: 200;
-    margin: 32px 0 12px;
-    color: #000;
+    @include text(32px, left, $black-400, 500);
+    margin: 0 0 32px 0;
+
+    @include for-big-desktop-up {
+      @include text(48px, left, $black-400, 500);
+    }
+
+    @include for-phone-only {
+      @include text(26px, left, $black-400, 500);
+    }
   }
 
   &__footer {

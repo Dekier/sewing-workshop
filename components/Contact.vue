@@ -19,9 +19,7 @@
           <div class="Contact__text">Piątek: <span>Zamknięte</span></div>
         </div>
         <div class="Contact__half-container-cell">
-          <div class="Contact__half-container-title">
-            Skontaktuj się z nami przez:
-          </div>
+          <div class="Contact__half-container-title">Skontaktuj się:</div>
           <a href="tel:691860192" class="Contact__text">
             Telefon: 691 860 192 </a
           ><a href="mailto:magdalenadekier@op.pl" class="Contact__text">

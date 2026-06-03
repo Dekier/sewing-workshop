@@ -148,15 +148,15 @@ export default {
             "Zwężanie w pasie",
             "Zwężanie nogawek",
             "Naszywanie łat",
-            "Skracanie z orginalnym dołem",
+            "Skracanie z oryginalnym dołem",
           ],
         },
         {
           url: "/images/mundur.webp",
           title: "MUNDURY",
           info: [
-            "Zwężanie marynarek, spodni, spódniczek, koszul",
-            "Skracanie spodni, spódniczek, koszul",
+            "Zwężanie: marynarek, spodni, spódnic, koszul",
+            "Skracanie: spodni, spódniczek, koszul",
             "Przyszywanie emblematów",
           ],
         },

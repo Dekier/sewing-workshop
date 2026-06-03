@@ -3,7 +3,7 @@
     <div class="Reviews__center-container">
       <div class="Reviews__header">
         <h2 class="Reviews__title">
-          Zaufało nam już ponad 23500 osób w Poznaniu!
+          Zaufało nam już ponad 23 500 osób w Poznaniu!
         </h2>
         <div class="Reviews__nav">
           <button

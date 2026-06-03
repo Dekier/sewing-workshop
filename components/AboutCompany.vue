@@ -2,16 +2,29 @@
   <div id="company" class="AboutCompany__main-container">
     <div class="AboutCompany__text-container">
       <h3 class="AboutCompany__subtitle">Moja pasja</h3>
-      <p
-        class="AboutCompany__article"
-      >Wszelkie usługi krawieckie w Poznaniu to moja pasja i specjalność.Serdecznie zapraszam do Pracowni Krawickiej Magdaleny Dekier, którą prowadzę od 1993r. Przerabiam odzież i dopasowuję do odpowiednich wymiarów sylwetki Pani lub Pana. Zważam, aby klient czuł się w danej rzeczy dobrze, wygodnie i niepowtarzalnie. Do każdego zlecenia - projektu podchodzę indywidualnie. Przeróbki krawieckie wykonuję w sposób profesjonalny, aby rzeczy mogły pięknie wyglądać i jak najdłużej służyć.</p>
+
       <p class="AboutCompany__article">
-        Część pracy wykonuję ręcznie w tradycyjmej technologi krawieckiej lub używam specjalistycznych maszyn dzięki czemu usługa jest wysokiej jakości. W pracowni służę fachową poradą. Cenię sobie punktualność, rzetelność, dokładność.
-        Czas realizacji 1 - 7 dni roboczych. Powiadamiam sms - em gdy usługa jest gotowa do odbioru.
+        Usługi krawieckie w Poznaniu to moja pasja i specjalność. Serdecznie
+        zapraszam do Pracowni Krawieckiej Magdaleny Dekier, którą z dumą
+        prowadzę od 1993 roku. Zajmuję się profesjonalną przeróbką odzieży
+        damskiej oraz męskiej, dbając o idealne dopasowanie ubrań do każdej
+        sylwetki. Zależy mi na tym, aby każdy klient czuł się w swoich rzeczach
+        wygodnie, dobrze i wyjątkowo.
       </p>
+
       <p class="AboutCompany__article">
-        Serdecznie zapraszam do siedziby mojej pracowni krawieckiej, która mieści się w Poznaniu na Piątkowie
-        <br />Ul. Jaroczyńskiego 41 vis a vis os. Jagiełły.
+        Do każdego zlecenia podchodzę indywidualnie. Część prac wykonuję
+        ręcznie, kultywując tradycyjne rzemiosło krawieckie, a część przy użyciu
+        specjalistycznych maszyn, co gwarantuje najwyższą jakość usług. W
+        pracowni zawsze służę fachową poradą, a w codziennej pracy stawiam na
+        dokładność, rzetelność i punktualność.
+      </p>
+
+      <p class="AboutCompany__article">
+        Czas realizacji zleceń wynosi od 1 do 7 dni roboczych, a o gotowości
+        odbioru zawsze powiadamiam wiadomością SMS. Serdecznie zapraszam do
+        siedziby mojej pracowni w Poznaniu na Piątkowie, która mieści się przy
+        <strong>ul. Jaroczyńskiego 41</strong> (vis-à-vis os. Jagiełły).
       </p>
     </div>
   </div>
@@ -19,7 +32,7 @@
 
 <script>
 export default {
-  name: "AboutCompany"
+  name: "AboutCompany",
 };
 </script>
 
