@@ -23,9 +23,10 @@
             Skontaktuj się z nami przez:
           </div>
           <a href="tel:691860192" class="Contact__text">
-            Telefon: 691 860 192
+            Telefon: 691 860 192 </a
+          ><a href="mailto:magdalenadekier@op.pl" class="Contact__text">
+            E-mail: magdalenadekier@op.pl
           </a>
-          <div class="Contact__text">E-mail: magdalenadekier@op.pl</div>
         </div>
       </div>
     </div>

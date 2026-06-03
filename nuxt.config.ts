@@ -7,4 +7,14 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  modules: ["@nuxt/scripts"],
+  scripts: {
+    registry: {
+      googleAnalytics: {
+        id: "G-S0YVPQPD54",
+        trigger: "onNuxtReady",
+      },
+    },
+  },
 });

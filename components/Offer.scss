@@ -1,3 +1,5 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
 .Offer {
   &__main-container {
     display: flex;
@@ -75,13 +77,16 @@
   }
 
   &__offer-title {
-    font-family: "Charmonman", cursive;
-    font-size: 30px;
-    font-weight: 200;
-    text-align: center;
-    margin: 0 0 120px;
-    @media (max-width: 600px) {
-      margin: 0 0 60px;
+    margin: 0 0 60px;
+
+    @include text(32px, left, $black-400, 500);
+
+    @include for-big-desktop-up {
+      @include text(48px, left, $black-400, 500);
+    }
+
+    @include for-phone-only {
+      @include text(26px, left, $black-400, 500);
     }
   }
 
@@ -125,7 +130,6 @@
   &__box-name-left {
     position: relative;
     font-size: 24px;
-    font-family: "Charmonman", cursive;
     font-weight: 400;
     color: #000;
     text-align: center;
@@ -133,7 +137,6 @@
   }
 
   &__info {
-    font-family: "Muli", sans-serif;
     font-weight: 400;
     color: #000;
     font-size: 18px;

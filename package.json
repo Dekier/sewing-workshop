@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^2.0.2",
+    "@nuxt/scripts": "^1.2.1",
+    "nuxt-gtag": "^4.1.0",
     "sass": "^1.100.0",
     "vue-scrollto": "^2.20.0"
   }

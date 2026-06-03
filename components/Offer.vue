@@ -1,6 +1,6 @@
 <template>
   <div id="offer" class="Offer__main-container">
-    <h3 class="Offer__offer-title">Oferta</h3>
+    <h3 class="Offer__offer-title">Oferuję</h3>
     <div class="Offer__center-container">
       <div class="Offer__left-container">
         <div
