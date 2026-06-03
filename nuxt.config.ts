@@ -39,6 +39,23 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    serverAssets: [
+      {
+        baseName: "articles", // To będzie nazwa, pod którą odwołasz się w kodzie
+        dir: "app/assets/content/articles", // Ścieżka relatywna do głównego katalogu projektu
+      },
+    ],
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      routes: [
+        // '/',
+      ],
+    },
+    compressPublicAssets: { gzip: true, brotli: true },
+  },
+
   modules: ["@nuxt/scripts", "@nuxt/fonts"],
 
   fonts: {
