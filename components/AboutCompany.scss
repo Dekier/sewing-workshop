@@ -1,3 +1,5 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
 .AboutCompany {
   &__text-container {
     max-width: 1200px;
@@ -13,8 +15,16 @@
   }
 
   &__subtitle {
-    font-size: 30px;
-    font-weight: 200;
+    margin: 0 0 24px;
+    @include text(32px, left, $black-400, 500);
+
+    @include for-big-desktop-up {
+      @include text(48px, left, $black-400, 500);
+    }
+
+    @include for-phone-only {
+      @include text(26px, left, $black-400, 500);
+    }
   }
 
   @media screen and (max-width: 1200px) {

@@ -58,9 +58,9 @@ useHead({
     <TopNavbar />
     <Intro />
     <AboutCompany />
-    <Offer />
-    <Reviews />
-    <Contact />
+    <LazyOffer />
+    <LazyReviews />
+    <LazyContact />
   </main>
 </template>
 

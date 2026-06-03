@@ -1,4 +1,12 @@
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "pl",
+      },
+    },
+  },
+
   routeRules: {
     "/opinia": {
       redirect: {
