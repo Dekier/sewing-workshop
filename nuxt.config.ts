@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  ssr: true,
   app: {
     head: {
       htmlAttrs: {
@@ -7,7 +8,29 @@ export default defineNuxtConfig({
     },
   },
 
+  experimental: {
+    payloadExtraction: true,
+  },
+
   routeRules: {
+    "/__og-image__/**": { cache: false },
+    // Twoje główne reguły renderowania
+    "/**": { swr: 3600 },
+
+    // Zmuszenie przeglądarki do cachowania obrazków, css, js i czcionek przez rok
+    "/_nuxt/**": {
+      headers: { "cache-control": "public, max-age=31536000, immutable" },
+    },
+    "/images/**": { headers: { "cache-control": "public, max-age=31536000" } },
+    "/*.png": { headers: { "cache-control": "public, max-age=31536000" } },
+    "/*.webp": { headers: { "cache-control": "public, max-age=31536000" } },
+    "/*.jpg": { headers: { "cache-control": "public, max-age=31536000" } },
+    "/**/*.woff2": {
+      headers: { "cache-control": "public, max-age=31536000, immutable" },
+    },
+    "/**/*.woff": {
+      headers: { "cache-control": "public, max-age=31536000, immutable" },
+    },
     "/opinia": {
       redirect: {
         to: "https://g.page/r/CRlZPkO0DZHUEBM/review",
