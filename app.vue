@@ -5,7 +5,6 @@
   </NuxtLayout>
 </template>
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Charmonman&family=Inter:wght@400&family=Londrina+Outline&display=swap");
 html,
 body {
   margin: 0;

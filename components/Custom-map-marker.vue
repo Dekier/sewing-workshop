@@ -55,7 +55,7 @@
     padding: 8px;
     border-radius: 5px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.9px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
