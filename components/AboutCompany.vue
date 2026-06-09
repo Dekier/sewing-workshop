@@ -21,10 +21,12 @@
       </p>
 
       <p class="AboutCompany__article">
-        Czas realizacji zleceń wynosi od 1 do 7 dni roboczych, a o gotowości
-        odbioru zawsze powiadamiam wiadomością SMS. Serdecznie zapraszam do
-        siedziby mojej pracowni w Poznaniu na Piątkowie, która mieści się przy
-        <strong>ul. Jaroczyńskiego 41</strong> (vis-à-vis os. Jagiełły).
+        Standardowy czas realizacji zleceń wynosi od 1 do 7 dni roboczych. W
+        okresach większego obłożenia czas ten może ulec wydłużeniu, o czym
+        zawsze informuję na bieżąco. O gotowości odbioru niezmiennie powiadamiam
+        wiadomością SMS. Serdecznie zapraszam do siedziby mojej pracowni w
+        Poznaniu na Piątkowie, która mieści się przy ul. Jaroczyńskiego 41
+        (vis-à-vis os. Jagiełły).
       </p>
     </div>
   </div>
