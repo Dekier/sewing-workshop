@@ -1,0 +1,99 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
+.Intro {
+  &__main-container {
+    height: 700px;
+    margin: 80px 6px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden; // Zabezpiecza zaokrąglenia rogów przed wystającym obrazkiem
+
+    @media (max-width: 600px) {
+      height: 450px;
+    }
+  }
+
+  &__background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Działa dokładnie jak background-size: cover
+    object-position: center; // Działa jak background-position: 50%
+    z-index: 1; // Zdjęcie na sam spód
+    pointer-events: none; // Zapobiega możliwości "przypadkowego" przeciągnięcia obrazka myszką
+  }
+
+  &__black-background {
+    border-radius: 40px;
+    margin: 0;
+    width: 100%;
+    height: 100%; // Automatycznie dopasuje się do kontenera nadrzędnego
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2; // Ciemny filtr NAD zdjęciem, ale POD tekstem
+  }
+
+  &__title {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 3; // Tekst na samą górę, żeby filtr go nie przyciemniał
+    margin: 0 auto 0;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
+
+    h1 {
+      font-size: 64px;
+      margin: 0;
+      font-weight: 400;
+      font-family: "Charmonman", cursive !important;
+    }
+
+    h2 {
+      margin: 0;
+      @include text(32px, center, #fff, 400);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 40px;
+      }
+      h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      h1 {
+        font-size: 32px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__logo {
+    position: fixed;
+    top: 0;
+    left: 100px;
+    height: 120px;
+    z-index: 10;
+    padding: 32px;
+    margin: 20px auto 100px;
+    background-color: #fff;
+    border-radius: 8px;
+
+    @media (max-width: 800px) {
+      height: 80px;
+      left: 20px;
+      padding: 20px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.Page {
+  &__main-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  font-family: "Inter", sans-serif;
+}

@@ -1,0 +1,58 @@
+$color-yellow: #ffe100;
+$color-white: #fff;
+$color-gray: #13141b;
+$color-text: #42444d;
+$color-title: #25282b;
+$color-border: #e6e6e6;
+$black-999: #000000;
+
+$black-400: #2b2b2b;
+$black-300: #555555;
+$black-200: #808080;
+$black-100: #aaaaaa;
+
+$yellow-500: #ffe003;
+$yellow-400: #ffec68;
+$yellow-300: #fff39a;
+$yellow-200: #fff9cd;
+$yellow-100: #fffce6;
+$yellow-cos: #fdf8f2;
+
+$blue-500: #1250c4; // Kolor bazowy
+$blue-400: #4e82e5;
+$blue-300: #89aef0;
+$blue-200: #c4d6f8;
+$blue-100: #e7effd;
+
+$grey-500: #bfbfbf;
+$grey-400: #d5d5d5;
+$grey-300: #eaeaea;
+$grey-200: #f3f3f3;
+$grey-white: #ffffff;
+
+$weight-light: 300;
+$weight-medium: 400;
+$weight-bold: 600;
+
+$phone: 599px;
+$tablet-portrait: 600px;
+$tablet: 768px;
+$tablet-landscape: 950px;
+$tablet-timeline: 1080px;
+$desktop: 1170px;
+$big-desktop: 1300px;
+
+// calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+$font-size-title-rwd: calc(
+  24px + 26 * (100vw - 320px) / 880
+); //base size is 50px;
+$font-size-medium-rwd: calc(
+  18px + 4 * (100vw - 320px) / 880
+); // base size is 28px;
+$font-size-small-rwd: calc(
+  14px + 8 * (100vw - 320px) / 880
+); // base size is 24px;
+
+$font-size-title: 32px;
+$font-size-title-mobile: 24px;
+$font-main: "Inter", sans-serif;

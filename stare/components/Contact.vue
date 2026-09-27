@@ -1,7 +1,7 @@
 <template>
-  <section id="contact" class="Contact__main-container">
+  <div id="contact" class="Contact__main-container">
     <div class="Contact__center">
-      <h2 class="Contact__title">Kontakt</h2>
+      <span class="Contact__title"> Kontakt </span>
       <div class="Contact__half-container">
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">Adres:</div>
@@ -40,13 +40,13 @@
     ></iframe> -->
 
     <ClientOnly>
-      <div id="map" class="Contact__map"></div>
+      <div id="map" style="width: 100%; height: 100%; min-height: 450px"></div>
     </ClientOnly>
-    <div class="Contact__footer">
-      <h3 class="Contact__footer-title">Polecamy:</h3>
+    <div id="map" class="Contact__footer">
+      <span class="Contact__title"> Polecamy: </span>
       <div class="Contact__row">
         <a target="_blank" href="https://dezalroletypoznan.pl" rel="noopener">
-          <span class="Contact__partner-name">DEŻAL Rolety Poznań</span>
+          <div class="Contact__logo-dezal" />
         </a>
         <!-- <a target="_blank" href="https://techbless.pl" rel="noopener">
           <img
@@ -64,7 +64,7 @@
         </a> -->
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -105,13 +105,13 @@ const initGoogleMap = async () => {
       { lat: 52.45349, lng: 16.90548 }, // Lewy dolny róg
     ];
 
-    // Zaznaczamy budynek kolorem akcentowym
+    // Tworzymy żółty wielokąt
     const buildingHighlight = new Polygon({
       paths: buildingCorners,
-      strokeColor: "#4d7098", // Akcent niebieski
+      strokeColor: "#1250c4", // Żółta ramka
       strokeOpacity: 1.0,
       strokeWeight: 3, // Grubość ramki
-      fillColor: "#4d7098", // Akcent niebieski
+      fillColor: "#1250c4", // Żółte wypełnienie
       fillOpacity: 0.4, // 40% widoczności
     });
 
@@ -127,7 +127,7 @@ const initGoogleMap = async () => {
       map: map,
       position: centerOfBuilding,
       content: markerContainer,
-      title: "Pracownia Krawiecka Magdaleny Dekier",
+      title: "DEŻAL Rolety Poznań",
     });
   } catch (error) {
     console.error("Błąd ładowania mapy:", error);

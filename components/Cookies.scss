@@ -1,39 +1,52 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
+
 .Cookies {
   &__main-container {
-    background-color: #96eef7;
-    padding: 20px 12px;
     position: fixed;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    margin: auto;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
     z-index: 100;
-    font-size: 12px;
-    text-align: center;
-    opacity: 0.9;
     display: flex;
-    justify-content: center;
-    line-height: 24px;
-    font-size: 14px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 18px 22px;
+    border: 1px solid $color-line;
+    background: $color-surface;
+    color: $color-ink;
+    font-size: 13px;
+    line-height: 1.5;
+    box-shadow: 0 12px 38px rgba(55, 51, 49, 0.12);
+
+    @include for-phone-only {
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
+      padding: 18px;
+    }
   }
 
   &__btn {
-    position: relative;
-    right: 0;
-    background: #25282b;
-    padding: 5px;
-    height: 15px;
-    width: 15px;
-    border-radius: 4px;
+    flex: none;
+    min-height: 38px;
+    padding: 0 14px;
+    border: 1px solid $color-blue-dark;
+    background: $color-blue-dark;
+    color: $color-white;
+    font: inherit;
+    font-weight: 600;
     cursor: pointer;
-    margin-left: 30px;
 
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%) scale(0.2);
-      transform: translate(-50%, -50%) scale(0.2);
+    &:hover {
+      background: $color-blue-deep;
+      color: $color-white;
     }
   }
 }

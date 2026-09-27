@@ -2,7 +2,7 @@
 
 ## Stack i struktura
 
-- Nuxt 4, Vue 3, TypeScript, SCSS.
+- Nuxt 3, Vue 3, TypeScript, SCSS.
 
 ## Ważne dane
 

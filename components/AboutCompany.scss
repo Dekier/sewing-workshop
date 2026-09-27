@@ -1,49 +1,65 @@
 @use "@/assets/stylesheets/main-variables" as *;
 @use "@/assets/stylesheets/mixins" as *;
+
 .AboutCompany {
-  &__text-container {
-    max-width: 1200px;
-    margin: 120px auto;
-    padding: 0 16px;
+  &__main-container {
+    scroll-margin-top: 182px;
+    background: $color-surface;
   }
 
-  &__article {
-    font-size: 18px;
-    font-family: "Inter", sans-serif;
-    font-weight: 200;
-    line-height: 36px;
+  &__text-container {
+    width: min(100% - 40px, 1320px);
+    margin: 0 auto;
+    padding: 60px 0 112px;
+
+    @include for-phone-only {
+      width: min(100% - 32px, 1320px);
+      padding: 76px 0 48px;
+    }
+  }
+
+  &__intro {
+    display: grid;
+    gap: 24px 68px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid $color-line;
+
+    @include for-tablet-landscape-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   &__subtitle {
-    margin: 0 0 24px;
-    @include text(32px, left, $black-400, 500);
+    margin: 0;
+    color: $color-blue-dark;
+    font-family: $font-display;
+    font-size: clamp(58px, 6vw, 86px);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+  }
 
-    @include for-big-desktop-up {
-      @include text(48px, left, $black-400, 500);
-    }
+  &__details {
+    display: grid;
+    gap: 24px 68px;
+    padding-top: 36px;
 
-    @include for-phone-only {
-      @include text(26px, left, $black-400, 500);
+    @include for-tablet-landscape-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  @media screen and (max-width: 1200px) {
-    &__main-container {
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    &__text-container {
-      width: auto;
-      padding: 0 15px;
-    }
-
-    &__article {
-      font-size: 16px;
-      line-height: 25px;
-    }
-    &__text-container {
-      margin-top: 60px;
-    }
+  &__article {
+    max-width: 69ch;
+    margin: 0;
+    color: $color-muted;
+    font-size: 15px;
+    line-height: 1.85;
+    // &--lead {
+    //   color: $color-ink;
+    //   font-size: clamp(18px, 1.9vw, 22px);
+    //   line-height: 1.65;
+    // }
   }
 }

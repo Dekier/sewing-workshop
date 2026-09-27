@@ -1,12 +1,30 @@
+@use "@/assets/stylesheets/main-variables" as *;
+
 .Page {
   &__main-container {
-    display: flex;
-    flex-direction: column;
-  }
-}
+    min-width: 320px;
+    overflow: clip;
+    color: $color-ink;
+    background: $color-surface;
+    font-family: $font-main;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 
-* {
-  box-sizing: border-box;
-  letter-spacing: 1px;
-  font-family: "Inter", sans-serif;
+    ::selection {
+      background: $color-blue;
+      color: $color-white;
+    }
+
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid $color-blue;
+      outline-offset: 4px;
+    }
+  }
 }

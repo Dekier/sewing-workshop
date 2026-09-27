@@ -1,99 +1,159 @@
 @use "@/assets/stylesheets/main-variables" as *;
 @use "@/assets/stylesheets/mixins" as *;
+
 .Intro {
   &__main-container {
-    height: 700px;
-    margin: 80px 6px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 40px;
-    position: relative;
-    overflow: hidden; // Zabezpiecza zaokrąglenia rogów przed wystającym obrazkiem
+    display: grid;
+    scroll-margin-top: 82px;
+    background: $color-surface;
 
-    @media (max-width: 600px) {
-      height: 450px;
+    @include for-phone-only {
+      scroll-margin-top: 72px;
+    }
+
+    @include for-tablet-landscape-up {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+      min-height: 670px;
     }
   }
 
-  &__background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; // Działa dokładnie jak background-size: cover
-    object-position: center; // Działa jak background-position: 50%
-    z-index: 1; // Zdjęcie na sam spód
-    pointer-events: none; // Zapobiega możliwości "przypadkowego" przeciągnięcia obrazka myszką
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    padding: 80px 28px 84px;
+
+    @include for-phone-only {
+      padding: 66px 20px 64px;
+    }
+
+    @include for-tablet-landscape-up {
+      padding: 90px 5vw 100px max(5vw, calc((100vw - 1320px) / 2));
+    }
   }
 
-  &__black-background {
-    border-radius: 40px;
-    margin: 0;
-    width: 100%;
-    height: 100%; // Automatycznie dopasuje się do kontenera nadrzędnego
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 2; // Ciemny filtr NAD zdjęciem, ale POD tekstem
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    padding-bottom: 19px;
+    border-bottom: 1px solid $color-line;
+    color: $color-blue-dark;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
   }
 
   &__title {
-    position: relative;
-    text-align: center;
-    color: #fff;
-    z-index: 3; // Tekst na samą górę, żeby filtr go nie przyciemniał
-    margin: 0 auto 0;
-    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
+    max-width: 740px;
+    margin: 30px 0 24px;
+    color: $color-blue-dark;
+    font-family: $font-display;
+    font-size: clamp(62px, 6.4vw, 96px);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 0.94;
 
-    h1 {
-      font-size: 64px;
-      margin: 0;
-      font-weight: 400;
-      font-family: "Charmonman", cursive !important;
+    span {
+      display: block;
+      font-style: italic;
+      font-weight: 500;
     }
 
-    h2 {
-      margin: 0;
-      @include text(32px, center, #fff, 400);
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 40px;
-      }
-      h2 {
-        font-size: 32px;
-      }
-    }
-
-    @media (max-width: 450px) {
-      h1 {
-        font-size: 32px;
-      }
-      h2 {
-        font-size: 24px;
-      }
+    @include for-phone-only {
+      font-size: clamp(55px, 13.2vw, 70px);
     }
   }
 
-  &__logo {
-    position: fixed;
-    top: 0;
-    left: 100px;
-    height: 120px;
-    z-index: 10;
-    padding: 32px;
-    margin: 20px auto 100px;
-    background-color: #fff;
-    border-radius: 8px;
+  &__description {
+    max-width: 470px;
+    margin: 0;
+    color: $color-muted;
+    font-size: clamp(15px, 1.35vw, 18px);
+    line-height: 1.8;
+  }
 
-    @media (max-width: 800px) {
-      height: 80px;
-      left: 20px;
-      padding: 20px;
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 30px;
+    margin-top: 38px;
+  }
+
+  &__primary-link,
+  &__secondary-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 49px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 180ms ease, color 180ms ease;
+  }
+
+  &__primary-link {
+    padding: 0 24px;
+    background: $color-blue-dark;
+    color: $color-white;
+
+    &:hover {
+      background: $color-blue-deep;
+    }
+  }
+
+  &__secondary-link {
+    color: $color-blue-dark;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+
+    &:hover {
+      color: $color-blue-deep;
+    }
+  }
+
+  &__visual {
+    position: relative;
+    min-width: 0;
+    padding: 0 16px 24px;
+
+    @include for-tablet-landscape-up {
+      padding: 44px max(5vw, calc((100vw - 1320px) / 2)) 44px 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 55% center;
+
+    @include for-tablet-landscape-up {
+      height: 100%;
+      min-height: 560px;
+    }
+  }
+
+  &__image-label {
+    position: absolute;
+    right: 16px;
+    bottom: 24px;
+    padding: 12px 18px;
+    background: $color-white;
+    color: $color-muted;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    @include for-tablet-landscape-up {
+      right: max(5vw, calc((100vw - 1320px) / 2));
+      bottom: 44px;
     }
   }
 }

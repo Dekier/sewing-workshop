@@ -1,0 +1,49 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
+.AboutCompany {
+  &__text-container {
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 0 16px;
+  }
+
+  &__article {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+    line-height: 36px;
+  }
+
+  &__subtitle {
+    margin: 0 0 24px;
+    @include text(32px, left, $black-400, 500);
+
+    @include for-big-desktop-up {
+      @include text(48px, left, $black-400, 500);
+    }
+
+    @include for-phone-only {
+      @include text(26px, left, $black-400, 500);
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    &__main-container {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    &__text-container {
+      width: auto;
+      padding: 0 15px;
+    }
+
+    &__article {
+      font-size: 16px;
+      line-height: 25px;
+    }
+    &__text-container {
+      margin-top: 60px;
+    }
+  }
+}

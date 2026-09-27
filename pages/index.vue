@@ -57,8 +57,8 @@ useHead({
   <main class="Page__main-container">
     <TopNavbar />
     <Intro />
-    <AboutCompany />
     <LazyOffer />
+    <AboutCompany />
     <LazyReviews />
     <LazyContact />
   </main>

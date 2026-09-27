@@ -1,188 +1,91 @@
 <template>
-  <div id="offer" class="Offer__main-container">
-    <h3 class="Offer__offer-title">Oferuję</h3>
-    <div class="Offer__center-container">
-      <div class="Offer__left-container">
-        <div
-          v-for="(data, index) in boxesDataLeft"
-          :key="'left-' + index"
-          class="Offer__box-container"
-          :style="{ order: index * 2 }"
-        >
-          <div class="Offer__image-container-left">
-            <div
-              :style="backgroundStyle(data.url, index)"
-              class="Offer__image"
-            />
-          </div>
-          <div class="Offer__box-info-left">
-            <div class="Offer__box-name-left">{{ data.title }}</div>
-            <div class="Offer__box-info">
-              <span
-                class="Offer__info"
-                v-for="(info, infoIndex) in data.info"
-                :key="infoIndex"
-                >• {{ info }}</span
-              >
-            </div>
-          </div>
-        </div>
+  <section id="offer" class="Offer__main-container">
+    <div class="Offer__inner">
+      <div class="Offer__heading-row">
+        <h2 class="Offer__offer-title">Oferuję</h2>
+        <p class="Offer__intro">Przeróbki odzieży damskiej i męskiej oraz tekstyliów domowych.</p>
       </div>
 
-      <div class="Offer__right-container">
-        <div
-          v-for="(data, index) in boxesDataRight"
-          :key="'right-' + index"
-          class="Offer__box-container"
-          :style="{ order: index * 2 + 1 }"
-        >
-          <div class="Offer__image-container-right">
-            <div
-              :style="backgroundStyle(data.url, index)"
+      <div class="Offer__grid">
+        <article v-for="service in services" :key="service.title" class="Offer__service">
+          <div class="Offer__image-wrap">
+            <img
               class="Offer__image"
+              :src="service.image"
+              :alt="service.imageAlt"
+              loading="lazy"
+              decoding="async"
             />
           </div>
-          <div class="Offer__box-info-right">
-            <div class="Offer__box-name-right">{{ data.title }}</div>
-            <div class="Offer__box-info">
-              <span
-                class="Offer__info"
-                v-for="(info, infoIndex) in data.info"
-                :key="infoIndex"
-                >• {{ info }}</span
-              >
-            </div>
+          <div class="Offer__service-content">
+            <h3 class="Offer__service-title">{{ service.title }}</h3>
+            <ul class="Offer__service-list">
+              <li v-for="item in service.info" :key="item">{{ item }}</li>
+            </ul>
           </div>
-        </div>
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
-<script>
-export default {
-  name: "Offer",
-
-  data() {
-    return {
-      // Zmieniono nazwę na Left, bo idzie do lewego kontenera
-      boxesDataLeft: [
-        {
-          url: "/images/dresses.webp",
-          title: "SUKNIE",
-          info: [
-            "Skracanie długości",
-            "Skracanie rękawów",
-            "Zwężanie",
-            "Taliowanie",
-            "Zmiana dekoltu",
-            "Wszywanie zamków",
-          ],
-        },
-        {
-          url: "/images/shirt2.webp",
-          title: "KOSZULE",
-          info: [
-            "Skracanie długości",
-            "Skracanie rękawów",
-            "Zwężanie",
-            "Taliowanie",
-          ],
-        },
-        {
-          url: "/images/skirt.webp",
-          title: "SPÓDNICE",
-          info: [
-            "Zwężanie",
-            "Skracanie długości",
-            "Wszywanie zamków",
-            "Wymiana podszewki",
-          ],
-        },
-        {
-          url: "/images/coat.webp",
-          title: "PŁASZCZE",
-          info: [
-            "Skracanie długości",
-            "Skracanie rękawów",
-            "Zwężanie",
-            "Przyszywanie guzików",
-          ],
-        },
-        {
-          url: "/images/room.webp",
-          title: "ZASŁONY i OBRUSY",
-          info: ["Skracanie", "Obszywanie"],
-        },
-      ],
-      // Zmieniono nazwę na Right, bo idzie do prawego kontenera
-      boxesDataRight: [
-        {
-          url: "/images/jacket.webp",
-          title: "MARYNARKI",
-          info: [
-            "Skracanie długości",
-            "Skracanie rękawów",
-            "Zwężanie ramion",
-            "Taliowanie",
-            "Przyszywanie guzików",
-          ],
-        },
-        {
-          url: "/images/trausers.webp",
-          title: "SPODNIE",
-          info: [
-            "Skracanie długości",
-            "Wydłużanie",
-            "Wszywanie zamków",
-            "Zwężanie w pasie",
-            "Zwężanie nogawek",
-          ],
-        },
-        {
-          url: "/images/jeans.webp",
-          title: "JEANS",
-          info: [
-            "Skracanie długości",
-            "Wszywanie zamków",
-            "Zwężanie w pasie",
-            "Zwężanie nogawek",
-            "Naszywanie łat",
-            "Skracanie z oryginalnym dołem",
-          ],
-        },
-        {
-          url: "/images/mundur.webp",
-          title: "MUNDURY",
-          info: [
-            "Zwężanie: marynarek, spodni, spódnic, koszul",
-            "Skracanie: spodni, spódniczek, koszul",
-            "Przyszywanie emblematów",
-          ],
-        },
-      ],
-    };
+<script setup lang="ts">
+const services = [
+  {
+    title: "Marynarki",
+    image: "/images/jacket-navy.webp",
+    imageAlt: "Mężczyzna w granatowej marynarce na ulicy",
+    info: ["Skracanie długości", "Skracanie rękawów", "Zwężanie ramion", "Taliowanie", "Przyszywanie guzików"],
   },
-
-  methods: {
-    backgroundStyle(url, index) {
-      if (index === 5) {
-        return {
-          "background-image": `url(${url})`,
-          "background-size": "cover",
-          "background-repeat": "no-repeat",
-        };
-      } else {
-        return {
-          "background-image": `url(${url})`,
-          "background-size": "cover",
-          "background-repeat": "no-repeat",
-          "background-position": "50%",
-        };
-      }
-    },
+  {
+    title: "Koszule",
+    image: "/images/shirt-ivory.webp",
+    imageAlt: "Kobieta w białej koszuli na dziedzińcu",
+    info: ["Skracanie długości", "Skracanie rękawów", "Zwężanie", "Taliowanie"],
   },
-};
+  {
+    title: "Spodnie",
+    image: "/images/trousers-charcoal.webp",
+    imageAlt: "Mężczyzna w grafitowych spodniach na ulicy",
+    info: ["Skracanie długości", "Wydłużanie", "Wszywanie zamków", "Zwężanie w pasie", "Zwężanie nogawek"],
+  },
+  {
+    title: "Suknie",
+    image: "/images/dresses-blue.webp",
+    imageAlt: "Kobieta w niebieskiej sukni w ogrodzie",
+    info: ["Skracanie długości", "Skracanie rękawów", "Zwężanie", "Taliowanie", "Zmiana dekoltu", "Wszywanie zamków"],
+  },
+  {
+    title: "Spódniczki",
+    image: "/images/skirt-rose.webp",
+    imageAlt: "Kobieta w bordowej spódnicy w ogrodzie",
+    info: ["Zwężanie", "Skracanie długości", "Wszywanie zamków", "Wymiana podszewki"],
+  },
+  {
+    title: "Jeansy",
+    image: "/images/jeans-blue.webp",
+    imageAlt: "Kobieta w niebieskich jeansach na dziedzińcu",
+    info: ["Skracanie długości", "Wszywanie zamków", "Zwężanie w pasie", "Zwężanie nogawek", "Naszywanie łat", "Skracanie z oryginalnym dołem"],
+  },
+  {
+    title: "Płaszcze",
+    image: "/images/coat-camel.webp",
+    imageAlt: "Kobieta w beżowym płaszczu na ulicy",
+    info: ["Skracanie długości", "Skracanie rękawów", "Zwężanie", "Przyszywanie guzików"],
+  },
+  {
+    title: "Mundury",
+    image: "/images/mundur-polish.webp",
+    imageAlt: "Oliwkowy mundur z polską flagą w plenerze",
+    info: ["Zwężanie: marynarek, spodni, spódnic, koszul", "Skracanie: spodni, spódniczek, koszul", "Przyszywanie emblematów"],
+  },
+  {
+    title: "Zasłony i obrusy",
+    image: "/images/curtains-linen.webp",
+    imageAlt: "Lniane zasłony i obrus w jasnej jadalni",
+    info: ["Skracanie", "Obszywanie"],
+  },
+];
 </script>
 
 <style lang="scss">

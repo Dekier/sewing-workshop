@@ -22,8 +22,8 @@ export default defineNuxtConfig({
     provider: "google",
     families: [
       {
-        name: "Cormorant Garamond",
-        weights: ["500", "600"],
+        name: "Charmonman",
+        weights: ["400"], // Twoja czcionka dekoracyjna do nagłówków
       },
       {
         name: "Inter",

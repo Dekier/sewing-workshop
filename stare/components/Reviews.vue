@@ -1,26 +1,32 @@
 <template>
-  <section id="reviews" class="Reviews__main-container">
+  <section class="Reviews__main-container">
     <div class="Reviews__center-container">
       <div class="Reviews__header">
         <h2 class="Reviews__title">
-          Zaufało nam już ponad 23 500!
+          Zaufało nam już ponad 23 500 osób w Poznaniu!
         </h2>
         <div class="Reviews__nav">
           <button
             @click="prev"
             :disabled="currentIndex === 0"
-            aria-label="Poprzednie opinie"
             class="Reviews__nav-btn"
           >
-            <img src="/icons/arrow-right.svg" alt="" class="Reviews__nav-btn-icon-left" />
+            <img
+              src="/icons/arrow-right.svg"
+              alt="icon arrow"
+              class="Reviews__nav-btn-icon-left"
+            />
           </button>
           <button
             @click="next"
             :disabled="currentIndex >= maxIndex"
-            aria-label="Następne opinie"
             class="Reviews__nav-btn"
           >
-            <img src="/icons/arrow-right.svg" alt="" class="Reviews__nav-btn-icon-right" />
+            <img
+              src="/icons/arrow-right.svg"
+              alt="icon arrow"
+              class="Reviews__nav-btn-icon-right"
+            />
           </button>
         </div>
       </div>
@@ -43,9 +49,7 @@
           >
             <div class="ReviewCard">
               <div class="ReviewCard__header">
-                <div class="ReviewCard__stars" :aria-label="`Ocena: ${review.rating} na 5`">
-                  {{ "★".repeat(review.rating ?? 0) }}
-                </div>
+                <div class="ReviewCard__stars">★★★★★</div>
                 <div class="ReviewCard__author">
                   {{ review.author_name?.split(" ")[0] }}
                   |
@@ -79,18 +83,19 @@
             </div>
           </div>
         </div>
+        <a
+          class="Reviews__box-btn"
+          target="_black"
+          href="https://maps.app.goo.gl/8QKAHnphABoH6E5r6"
+          >Zobacz wszystkie opinie
+          <div class="Reviews__btn-arrow-box">
+            <img
+              src="/icons/arrow.svg"
+              alt="icon arrow"
+              class="Reviews__btn-arrow-icon"
+            /></div
+        ></a>
       </div>
-      <a
-        class="Reviews__box-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://maps.app.goo.gl/8QKAHnphABoH6E5r6"
-      >
-        Zobacz wszystkie opinie
-        <span class="Reviews__btn-arrow-box">
-          <img src="/icons/arrow.svg" alt="" class="Reviews__btn-arrow-icon" />
-        </span>
-      </a>
     </div>
   </section>
 </template>
@@ -104,12 +109,10 @@ const reviews = ref([]);
 
 watchEffect(() => {
   if (fetchedReviews.value) {
-    reviews.value = fetchedReviews.value
-      .filter((r: any) => Number(r.rating) >= 2)
-      .map((r: any) => ({
-        ...r,
-        isExpanded: false,
-      }));
+    reviews.value = fetchedReviews.value.map((r: any) => ({
+      ...r,
+      isExpanded: false,
+    }));
   }
 });
 
@@ -124,7 +127,7 @@ const toggleText = (index: number) => {
 const updateVisibleItems = () => {
   if (process.client) {
     if (window.innerWidth < 768) visibleItems.value = 1;
-    else if (window.innerWidth < 1170) visibleItems.value = 2;
+    else if (window.innerWidth < 1024) visibleItems.value = 2;
     else visibleItems.value = 4;
   }
 };

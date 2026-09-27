@@ -1,0 +1,53 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@mixin text($size: 16px, $align: left, $color: $black, $weight: 400) {
+  font-family: $font-main;
+  font-display: swap;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-align: $align;
+  transition: color 300ms;
+}
+
+@mixin for-phone-only {
+  @media (max-width: $phone) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: $tablet-portrait) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: $tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: $big-desktop) {
+    @content;
+  }
+}
+// $phone: 599px;
+// $tablet-portrait: 600px;
+// $tablet: 768px;
+// $tablet-landscape: 950px;
+// $tablet-timeline: 1080px;
+// $desktop: 1170px;
+// $big-desktop: 1300px;

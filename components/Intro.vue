@@ -1,39 +1,39 @@
 <template>
-  <div class="Intro__main-container">
-    <img
-      src="/images/intro3.webp"
-      class="Intro__background-image"
-      alt="Wnętrze pracowni krawieckiej Magdalena Dekier Poznań"
-      fetchpriority="high"
-      loading="eager"
-      decoding="sync"
-    />
+  <section id="top" class="Intro__main-container">
+    <div class="Intro__content">
+      <div class="Intro__meta">
+        <span>Poznań — Piątkowo</span>
+        <span>Od 1993 roku</span>
+      </div>
 
-    <div class="Intro__black-background" />
+      <h1 class="Intro__title">
+        Pracownia Krawiecka
+        <span>Magdaleny Dekier</span>
+      </h1>
 
-    <div class="Intro__title">
-      <h1>Pracownia Krawiecka</h1>
-      <h2>Magdaleny Dekier</h2>
+      <p class="Intro__description">
+        Profesjonalna przeróbka odzieży damskiej oraz męskiej, z dbałością o
+        idealne dopasowanie do każdej sylwetki.
+      </p>
+
+      <div class="Intro__actions">
+        <a class="Intro__primary-link" href="#offer">Poznaj ofertę</a>
+        <a class="Intro__secondary-link" href="#contact">Kontakt i dojazd</a>
+      </div>
     </div>
 
-    <img
-      src="/images/logo_1993.png"
-      class="Intro__logo"
-      alt="Pracownia krawiecka Magdalena Dekier Intro"
-      fetchpriority="high"
-    />
-  </div>
+    <div class="Intro__visual">
+      <img
+        class="Intro__image"
+        src="/images/intro-detail-blue.webp"
+        alt="Ręczne dopasowywanie niebieskiej sukni"
+        fetchpriority="high"
+        loading="eager"
+      />
+      <div class="Intro__image-label">Dbałość o każdy detal</div>
+    </div>
+  </section>
 </template>
-
-<script>
-export default {
-  name: "Intro",
-
-  data: () => ({
-    scrolled: false,
-  }),
-};
-</script>
 
 <style lang="scss">
 @import "Intro";
