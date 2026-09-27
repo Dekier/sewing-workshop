@@ -6466,6 +6466,7 @@ __metadata:
     "@nuxt/scripts": "npm:^1.3.9"
     nuxt: "npm:^3.21.11"
     nuxt-gtag: "npm:^4.1.0"
+    nuxt-llms: "npm:0.2.0"
     sass: "npm:^1.105.0"
     vue: "npm:^3.5.43"
     vue-scrollto: "npm:^2.20.0"
@@ -6481,6 +6482,15 @@ __metadata:
     pathe: "npm:^2.0.3"
     ufo: "npm:^1.6.1"
   checksum: 10c0/36a0c1f5a9f78d93021fc2a791a25c0498b2037417318c93d958958d64c3e8599458f4d2d69b05840631f70bda926cae99ba866443ca251c3c7816ca8167b000
+  languageName: node
+  linkType: hard
+
+"nuxt-llms@npm:0.2.0":
+  version: 0.2.0
+  resolution: "nuxt-llms@npm:0.2.0"
+  dependencies:
+    "@nuxt/kit": "npm:^4.2.2"
+  checksum: 10c0/98979e837fbe516e7a617b0d2516a1006c1acad47255b70a2d7224258179f5a3aa89b0c5bf49758118952d824073a4dc49e1224e52258df694fe3f28bd99335e
   languageName: node
   linkType: hard
 

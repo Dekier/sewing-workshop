@@ -42,28 +42,6 @@
     <ClientOnly>
       <div id="map" class="Contact__map"></div>
     </ClientOnly>
-    <div class="Contact__footer">
-      <h3 class="Contact__footer-title">Polecamy:</h3>
-      <div class="Contact__row">
-        <a target="_blank" href="https://dezalroletypoznan.pl" rel="noopener">
-          <span class="Contact__partner-name">DEŻAL Rolety Poznań</span>
-        </a>
-        <!-- <a target="_blank" href="https://techbless.pl" rel="noopener">
-          <img
-            src="/images/tb.svg"
-            class="Contact__logo-tb"
-            alt="Firma techbless.pl - 3d w przeglądarce dla firm"
-          />
-        </a>
-        <a target="_blank" href="https://pravisto.pl" rel="noopener">
-          <img
-            src="/images/pravisto.jpg"
-            class="Contact__logo-tb"
-            alt="Pravisto - Aplikacja dla deweloperów"
-          />
-        </a> -->
-      </div>
-    </div>
   </section>
 </template>
 

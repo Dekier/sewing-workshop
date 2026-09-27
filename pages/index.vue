@@ -60,6 +60,7 @@ useHead({
     <LazyOffer />
     <AboutCompany />
     <LazyReviews />
+    <LazyRecommended />
     <LazyContact />
   </main>
 </template>

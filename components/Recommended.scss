@@ -1,0 +1,115 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
+
+.Recommended {
+  &__main-container {
+    padding: 112px 0;
+    background: $color-surface-warm;
+
+    @include for-phone-only {
+      padding: 76px 0;
+    }
+  }
+
+  &__inner {
+    display: grid;
+    align-items: center;
+    gap: 52px 84px;
+    width: min(100% - 40px, 1320px);
+    margin: 0 auto;
+
+    @include for-tablet-landscape-up {
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    }
+
+    @include for-phone-only {
+      width: min(100% - 32px, 1320px);
+      gap: 32px;
+    }
+  }
+
+  &__visual {
+    min-width: 0;
+    margin: 0;
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  &__caption {
+    margin-top: 10px;
+    color: $color-muted;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0 0 28px;
+    color: $color-blue-dark;
+    font-family: $font-display;
+    font-size: clamp(52px, 5.8vw, 78px);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+  }
+
+  &__logo {
+    display: block;
+    width: 164px;
+    height: auto;
+  }
+
+  &__description {
+    max-width: 56ch;
+    margin: 0 0 30px;
+    color: $color-ink;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 52px;
+    padding-left: 20px;
+    border: 1px solid $color-blue-dark;
+    color: $color-blue-dark;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background 180ms ease,
+      color 180ms ease;
+
+    &:hover {
+      background: $color-blue-soft;
+      color: $color-blue-deep;
+    }
+  }
+
+  &__link-icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 50px;
+    border-left: 1px solid $color-blue-dark;
+
+    img {
+      display: block;
+    }
+  }
+}

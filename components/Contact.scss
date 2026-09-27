@@ -4,11 +4,11 @@
 .Contact {
   &__main-container {
     scroll-margin-top: 82px;
-    padding-top: 106px;
-    background: $color-surface;
+    padding: 106px 0 0;
+    background: $color-surface-warm;
 
     @include for-phone-only {
-      padding-top: 76px;
+      padding: 76px 0 0;
     }
   }
 
@@ -85,51 +85,12 @@
   }
 
   &__map {
-    width: min(100% - 40px, 1320px);
+    width: 100%;
     height: 460px;
-    margin: 0 auto;
     background: $color-surface-warm;
 
     @include for-phone-only {
-      width: min(100% - 32px, 1320px);
       height: 350px;
-    }
-  }
-
-  &__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    width: min(100% - 40px, 1320px);
-    margin: 68px auto 0;
-    padding: 28px 0 48px;
-    border-top: 1px solid $color-line;
-
-    @include for-phone-only {
-      align-items: flex-start;
-      flex-direction: column;
-      width: min(100% - 32px, 1320px);
-      margin-top: 44px;
-    }
-  }
-
-  &__footer-title {
-    margin: 0;
-    color: $color-blue-dark;
-    font-size: 13px;
-    font-weight: 500;
-  }
-
-  &__row a {
-    color: $color-blue;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-
-    &:hover {
-      color: $color-blue-dark;
     }
   }
 }
