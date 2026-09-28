@@ -48,23 +48,26 @@
   }
 
   &__title {
+    container-type: inline-size;
+    width: 100%;
     max-width: 740px;
     margin: 30px 0 24px;
     color: $color-blue-dark;
     font-family: $font-display;
-    font-size: clamp(62px, 6.4vw, 96px);
     font-weight: 500;
-    letter-spacing: -0.035em;
-    line-height: 0.94;
+  }
 
-    span {
-      display: block;
+  &__title-line {
+    display: block;
+    width: 100%;
+    font-size: 11.5cqi;
+    line-height: 1;
+    white-space: nowrap;
+
+    &--name {
+      margin-top: 0.08em;
+      font-size: 15.08cqi;
       font-style: italic;
-      font-weight: 500;
-    }
-
-    @include for-phone-only {
-      font-size: clamp(55px, 13.2vw, 70px);
     }
   }
 
