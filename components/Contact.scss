@@ -5,7 +5,7 @@
   &__main-container {
     scroll-margin-top: 82px;
     padding: 106px 0 0;
-    background: $color-surface-warm;
+    background: $color-surface;
 
     @include for-phone-only {
       padding: 76px 0 0;
@@ -26,7 +26,7 @@
     margin: 0 0 48px;
     color: $color-blue-dark;
     font-family: $font-display;
-    font-size: clamp(58px, 6vw, 86px);
+    font-size: clamp(48px, 7vw, 64px);
     font-weight: 500;
     letter-spacing: -0.035em;
     line-height: 1.05;
@@ -76,11 +76,11 @@
 
   &__half-container-cell a {
     color: $color-blue-dark;
-    text-decoration: underline;
     text-underline-offset: 4px;
 
     &:hover {
       color: $color-blue;
+      text-decoration: underline;
     }
   }
 

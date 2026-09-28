@@ -5,7 +5,7 @@
   &__main-container {
     scroll-margin-top: 82px;
     padding: 108px 0 116px;
-    background: $color-blue-pale;
+    background: $color-surface;
 
     @include for-phone-only {
       padding: 76px 0 86px;
@@ -40,7 +40,7 @@
     margin: 0;
     color: $color-blue-dark;
     font-family: $font-display;
-    font-size: clamp(52px, 5.8vw, 78px);
+    font-size: clamp(48px, 7vw, 64px);
     font-weight: 500;
     letter-spacing: -0.035em;
     line-height: 0.98;
@@ -149,6 +149,7 @@
   height: 100%;
   padding: 28px;
   background: $color-white;
+  border: 1px solid $color-blue-dark;
 
   @include for-phone-only {
     min-height: 272px;

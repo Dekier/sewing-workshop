@@ -7,7 +7,7 @@
       <figure class="Recommended__visual">
         <img
           class="Recommended__photo"
-          src="/images/dezal-interior-illustration.png"
+          src="/images/dezal-interior-illustration.webp"
           alt="Jasne wnętrze z roletą rzymską przy oknie"
           width="1536"
           height="1024"

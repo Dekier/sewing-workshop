@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: "Krawiec Poznań Piątkowo | Pracownia Magdalena Dekier",
-  ogTitle: "Krawiec Poznań Piątkowo | Pracownia Magdalena Dekier",
+  title: "Pracownia krawiecka Magdaleny Dekier | Poznań Piątkowo",
+  ogTitle: "Pracownia krawiecka Magdaleny Dekier | Poznań Piątkowo",
   description:
     "Pracownia krawiecka w Poznaniu (Piątkowo). Przeróbki sukien, garniturów i naprawa odzieży. Tradycja od 1993 r. Zapraszamy na ul. Jaroczyńskiego 41!",
   ogDescription:
