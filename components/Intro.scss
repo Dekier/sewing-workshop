@@ -66,7 +66,8 @@
 
     &--name {
       margin-top: 0.08em;
-      font-size: 15.08cqi;
+      font-size: 7.08cqi;
+      text-align: center;
       font-style: italic;
     }
   }
@@ -96,7 +97,9 @@
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    transition: background 180ms ease, color 180ms ease;
+    transition:
+      background 180ms ease,
+      color 180ms ease;
   }
 
   &__primary-link {
