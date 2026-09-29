@@ -42,6 +42,7 @@
     <ClientOnly>
       <div id="map" class="Contact__map"></div>
     </ClientOnly>
+    <AuthorSignature />
   </section>
 </template>
 
