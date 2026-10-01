@@ -47,7 +47,7 @@
                   {{ "★".repeat(review.rating ?? 0) }}
                 </div>
                 <div class="ReviewCard__author">
-                  {{ review.author_name?.split(" ")[0] }}
+                  {{ review.author_name }}
                   |
                   {{ review.date }}
                 </div>
@@ -96,22 +96,66 @@
 </template>
 
 <script setup lang="ts">
-// Pobieramy dane
-const { data: fetchedReviews } = await useFetch("/api/reviews");
-
-// Tworzymy reaktywną kopię opinii z dodatkowym polem isExpanded
-const reviews = ref([]);
-
-watchEffect(() => {
-  if (fetchedReviews.value) {
-    reviews.value = fetchedReviews.value
-      .filter((r: any) => Number(r.rating) >= 2)
-      .map((r: any) => ({
-        ...r,
-        isExpanded: false,
-      }));
-  }
-});
+// Opinie przepisane ze zrzutów; ucięte fragmenty zachowują wielokropek.
+const reviews = ref([
+  {
+    author_name: "Dorota Thomas",
+    rating: 5,
+    date: "miesiąc temu",
+    text: "Korzystam z usług Pani Magdy regularnie - od prostego skracania spodni i sukienek po modyfikowanie dekoltów w bluzkach. Kilka lat temu nawet szyłam u niej sukienkę koktajlową wg własnego projektu! I zawsze jestem zadowolona z efektu, każda ...",
+  },
+  {
+    author_name: "Paweł Mikołajczyk",
+    rating: 5,
+    date: "miesiąc temu",
+    text: "Mój garnitur odzyskał dawną świetność. Skrócone rękawy marynarki, poszerzone spodnie w pasie + skrócone nogawki. Pani bardzo miła i od razu widać pełen profesjonalizm i znajomość sztuki krawieckiej. Usługa wykonana wzorowo i bez widocznych ...",
+  },
+  {
+    author_name: "Bodzio K .",
+    rating: 5,
+    date: "3 miesiące temu",
+    text: "Byłem u Pani Magdaleny z poprawkami do garnituru. Szybko, profesjonalnie, polecam!",
+  },
+  {
+    author_name: "Natalia Boduszek",
+    rating: 5,
+    date: "rok temu",
+    text: 'Pani Magdalena miała baaardzo trudne zadanie z moją "falbaniastą" sukienką.. Jednak poradziła sobie świetnie! Sukienka nie straciła swojego uroku, wszystko zostało skrócone z wielką starannością. Pani włożyła w to dużo czasu, ponieważ byłam ...',
+  },
+  {
+    author_name: "Grzegorz Kucz",
+    rating: 5,
+    date: "rok temu",
+    text: "Oddając garnitur na przerobienie nie wiedziałem, czego mogę się spodziewać. Efekt przeszedł moje oczekiwania. Bardzo dobrze pasował. Pani bardzo uprzejma i widać, że zna się na pracy. Następnym razem tez się do niej zwrócę 😜",
+  },
+  {
+    author_name: "Maciej Niemowny",
+    rating: 5,
+    date: "rok temu",
+    text: "Zdecydowanie polecam, pani Magdalena podjęła się przeróbki garnituru ślubnego w ekspresowym terminie. Jakość pracy 10/10!",
+  },
+  {
+    author_name: "Łukasz Florkowski",
+    rating: 5,
+    date: "10 miesięcy temu",
+    text: "Szybka i profesjonalna usługa w dobrej cenie. Dzięki takim krawcom można dać ubraniom drugie życie, a nie tylko wyrzucać i kupować nowe 🙏",
+  },
+  {
+    author_name: "Patryk Bogdan",
+    rating: 5,
+    date: "2 lata temu",
+    text: "Bardzo polecam pracownię, często przynoszę eleganckie ubrania(marynarki, spodnie z wysokim stanem, itp.). Terminy są zadowalające i jakość usług również wysoki poziom. Cena nieco wyższa niż konkurencja ale jest tego warta ...",
+  },
+  {
+    author_name: "Dominika Mikołajczyk",
+    rating: 5,
+    date: "rok temu",
+    text: "Z całego serca polecam! Na ostatnią chwilę zaniosłam do Pani Dekier sukienkę wieczorową do zwężenia. Pani poradziła sobie rewelacyjnie z sukienką. Uszyte zostało wszystko bardzo precyzyjnie, zupełnie jak od producenta - tylko, że na miarę:) Sukienka do odbioru była już na następny dzień, za co jestem bardzo wdzięczna. 10/10 mistrzostwo!",
+  },
+].map((review) => ({
+  ...review,
+  isExpanded: false,
+})));
 
 const currentIndex = ref(0);
 const visibleItems = ref(4);
