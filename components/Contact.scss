@@ -85,12 +85,191 @@
   }
 
   &__map {
+    position: relative;
     width: 100%;
     height: 460px;
+    margin: 0;
+    overflow: hidden;
     background: $color-surface-warm;
+    border-top: 1px solid $color-line;
+    font-family: $font-main;
 
     @include for-phone-only {
-      height: 350px;
+      height: 400px;
+    }
+  }
+
+  &__map-drawing {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__map-buildings {
+    fill: $color-line;
+    opacity: 0.65;
+  }
+
+  &__map-road {
+    fill: none;
+    stroke: $color-white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    &--main {
+      stroke-width: 12;
+    }
+
+    &--local {
+      stroke-width: 7;
+    }
+
+    &--access {
+      stroke-width: 3;
+    }
+
+    &--outline {
+      stroke: $color-line;
+      stroke-width: 15;
+    }
+  }
+
+  &__map-street {
+    fill: $color-muted;
+    stroke: $color-surface-warm;
+    stroke-width: 4;
+    paint-order: stroke;
+    font-family: $font-main;
+    font-size: 13px;
+    font-weight: 500;
+    text-anchor: middle;
+
+    &--nearby {
+      font-size: 14px;
+    }
+  }
+
+  &__map-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+    max-width: calc(100% - 32px);
+    transform: translate(-50%, -100%);
+  }
+
+  &__map-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 20px;
+    border: 1px solid $color-line;
+    border-radius: 12px;
+    background: $color-surface;
+    text-align: center;
+  }
+
+  &__map-name {
+    color: $color-blue-dark;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__map-address {
+    color: $color-muted;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  &__map-pin {
+    display: block;
+    width: 30px;
+    height: 42px;
+    flex-shrink: 0;
+    fill: $color-blue;
+  }
+
+  &__map-pin-center {
+    fill: $color-white;
+  }
+
+  &__map-footer {
+    position: absolute;
+    right: 24px;
+    bottom: 20px;
+    left: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include for-phone-only {
+      right: 16px;
+      bottom: 16px;
+      left: 16px;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  &__map-route {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 48px;
+    padding: 12px 22px;
+    box-sizing: border-box;
+    background: $color-blue-dark;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+
+    &:hover {
+      background: $color-blue-deep;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-blue;
+      outline-offset: 4px;
+    }
+  }
+
+  &__map-route-icon {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__map-attribution {
+    padding: 4px 8px;
+    background: $color-surface;
+    color: $color-muted;
+    font-family: $font-main;
+    font-size: 11px;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: $color-blue-dark;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-blue;
+      outline-offset: 3px;
     }
   }
 }
