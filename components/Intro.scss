@@ -4,16 +4,19 @@
 .Intro {
   &__main-container {
     display: grid;
+    width: min(100% - 40px, 1320px);
+    margin: 0 auto;
     scroll-margin-top: 82px;
     background: $color-surface;
 
     @include for-phone-only {
+      width: min(100% - 32px, 1320px);
       scroll-margin-top: 72px;
     }
 
     @include for-tablet-landscape-up {
       grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
-      min-height: 670px;
+      min-height: calc(100dvh - 83px);
     }
   }
 
@@ -23,14 +26,14 @@
     align-items: flex-start;
     justify-content: center;
     min-width: 0;
-    padding: 80px 28px 84px;
+    padding: 80px 0 84px;
 
     @include for-phone-only {
-      padding: 66px 20px 64px;
+      padding: 66px 0 64px;
     }
 
     @include for-tablet-landscape-up {
-      padding: 90px 5vw 100px max(5vw, calc((100vw - 1320px) / 2));
+      padding: clamp(64px, 4.69vw, 90px) 5vw clamp(64px, 4.69vw, 90px) 0;
     }
   }
 
@@ -55,6 +58,10 @@
     color: $color-blue-dark;
     font-family: $font-display;
     font-weight: 500;
+
+    @include for-tablet-landscape-up {
+      max-width: clamp(470px, 31vw, 740px);
+    }
   }
 
   &__title-line {
@@ -86,6 +93,10 @@
     align-items: center;
     gap: 14px 30px;
     margin-top: 38px;
+
+    @include for-tablet-landscape-up {
+      margin-top: clamp(30px, 1.98vw, 38px);
+    }
   }
 
   &__primary-link,
@@ -125,10 +136,10 @@
   &__visual {
     position: relative;
     min-width: 0;
-    padding: 0 16px 24px;
+    padding: 0 0 24px;
 
     @include for-tablet-landscape-up {
-      padding: 44px max(5vw, calc((100vw - 1320px) / 2)) 44px 0;
+      padding: clamp(28px, 2.3vw, 44px) 0 0;
     }
   }
 
@@ -140,14 +151,15 @@
     object-position: 55% center;
 
     @include for-tablet-landscape-up {
-      height: 100%;
-      min-height: 560px;
+      position: absolute;
+      top: clamp(28px, 2.3vw, 44px);
+      height: calc(100% - clamp(28px, 2.3vw, 44px));
     }
   }
 
   &__image-label {
     position: absolute;
-    right: 16px;
+    right: 0;
     bottom: 24px;
     padding: 12px 18px;
     background: $color-white;
@@ -158,8 +170,7 @@
     text-transform: uppercase;
 
     @include for-tablet-landscape-up {
-      right: max(5vw, calc((100vw - 1320px) / 2));
-      bottom: 44px;
+      bottom: 0;
     }
   }
 }
