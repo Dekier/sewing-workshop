@@ -4,87 +4,121 @@
 .Intro {
   &__main-container {
     display: grid;
-    width: min(100% - 40px, 1320px);
+    grid-template-areas:
+      "content"
+      "visual"
+      "meta";
+    width: min(100% - 48px, 1296px);
     margin: 0 auto;
     scroll-margin-top: 82px;
     background: $color-surface;
 
     @include for-phone-only {
-      width: min(100% - 32px, 1320px);
       scroll-margin-top: 72px;
     }
 
     @include for-tablet-landscape-up {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
-      min-height: calc(100dvh - 83px);
+      grid-template-areas: "panel visual";
+      grid-template-columns: minmax(0, 680fr) minmax(0, 576fr);
+      column-gap: 40px;
+      min-height: min(960px, calc(100svh - 83px));
+    }
+  }
+
+  &__panel {
+    display: contents;
+
+    @include for-tablet-landscape-up {
+      display: flex;
+      grid-area: panel;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding: clamp(20px, 3svh, 24px) 0 56px;
     }
   }
 
   &__content {
     display: flex;
+    grid-area: content;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
     min-width: 0;
-    padding: 80px 0 84px;
-
-    @include for-phone-only {
-      padding: 66px 0 64px;
-    }
+    padding: 30px 0 0;
 
     @include for-tablet-landscape-up {
-      padding: clamp(64px, 4.69vw, 90px) 5vw clamp(64px, 4.69vw, 90px) 0;
+      padding: 0;
     }
   }
 
   &__meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 22px;
-    padding-bottom: 19px;
-    border-bottom: 1px solid $color-line;
+    grid-area: meta;
+    padding: 24px 0 11px;
+
+    @include for-tablet-landscape-up {
+      padding: clamp(32px, 5svh, 52px) 0 0;
+    }
+  }
+
+  &__local {
+    margin: 0;
     color: $color-blue-dark;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__address {
+    margin: 7px 0 0;
+    color: $color-muted;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   &__title {
-    container-type: inline-size;
     width: 100%;
-    max-width: 740px;
-    margin: 30px 0 24px;
+    margin: 0 0 24px;
     color: $color-blue-dark;
     font-family: $font-display;
     font-weight: 500;
 
     @include for-tablet-landscape-up {
-      max-width: clamp(470px, 31vw, 740px);
+      margin-bottom: clamp(20px, 3svh, 28px);
     }
   }
 
   &__title-line {
     display: block;
-    width: 100%;
-    font-size: 11.5cqi;
-    line-height: 1;
-    white-space: nowrap;
+    font-size: clamp(52px, 16.41vw, 64px);
+    line-height: 0.94;
+
+    @include for-tablet-landscape-up {
+      font-size: clamp(56px, min(7.22vw, 11.5svh), 104px);
+    }
 
     &--name {
-      margin-top: 0.08em;
-      font-size: 7.08cqi;
-      text-align: center;
+      margin-top: 19px;
+      font-size: 34px;
+      line-height: 1.1;
       font-style: italic;
+
+      @include for-tablet-landscape-up {
+        margin-top: clamp(16px, 3svh, 28px);
+        font-size: clamp(32px, min(3.194vw, 5.5svh), 52px);
+      }
     }
   }
 
   &__description {
-    max-width: 470px;
+    max-width: 554px;
     margin: 0;
     color: $color-muted;
-    font-size: clamp(15px, 1.35vw, 18px);
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.5;
+
+    @include for-tablet-landscape-up {
+      font-size: 18px;
+    }
   }
 
   &__actions {
@@ -92,10 +126,10 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 14px 30px;
-    margin-top: 38px;
+    margin-top: 28px;
 
     @include for-tablet-landscape-up {
-      margin-top: clamp(30px, 1.98vw, 38px);
+      margin-top: clamp(24px, 5svh, 69px);
     }
   }
 
@@ -134,43 +168,36 @@
   }
 
   &__visual {
-    position: relative;
+    grid-area: visual;
     min-width: 0;
-    padding: 0 0 24px;
+    padding: 27px 0 0;
 
     @include for-tablet-landscape-up {
-      padding: clamp(28px, 2.3vw, 44px) 0 0;
+      padding: clamp(20px, 3svh, 24px) 0 24px;
     }
   }
 
   &__image {
     display: block;
     width: 100%;
-    height: 350px;
+    aspect-ratio: 342 / 370;
     object-fit: cover;
-    object-position: 55% center;
+    object-position: center;
 
     @include for-tablet-landscape-up {
-      position: absolute;
-      top: clamp(28px, 2.3vw, 44px);
-      height: calc(100% - clamp(28px, 2.3vw, 44px));
+      height: clamp(280px, calc(100svh - 165px), 878px);
+      aspect-ratio: auto;
     }
   }
 
   &__image-label {
-    position: absolute;
-    right: 0;
-    bottom: 24px;
-    padding: 12px 18px;
-    background: $color-white;
+    margin-top: 11px;
     color: $color-muted;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 1.5;
 
     @include for-tablet-landscape-up {
-      bottom: 0;
+      margin-top: 13px;
     }
   }
 }

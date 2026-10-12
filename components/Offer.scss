@@ -21,14 +21,11 @@
   &__heading-row {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 19px;
     margin-bottom: 46px;
 
     @include for-tablet {
-      flex-direction: row;
-      align-items: end;
-      justify-content: space-between;
-      gap: 40px;
+      gap: 13px;
       margin-bottom: 54px;
     }
   }
@@ -44,7 +41,7 @@
   }
 
   &__intro {
-    max-width: 370px;
+    max-width: 750px;
     margin: 0;
     color: $color-muted;
     font-size: 15px;
