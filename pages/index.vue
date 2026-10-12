@@ -17,7 +17,7 @@ useHead({
   script: [
     {
       type: "application/ld+json",
-      children: JSON.stringify({
+      textContent: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: "PRACOWNIA KRAWIECKA Magdaleny Dekier Poznań",
@@ -65,6 +65,4 @@ useHead({
   </main>
 </template>
 
-<style lang="scss">
-@import "index";
-</style>
+<style src="./index.scss" lang="scss"></style>

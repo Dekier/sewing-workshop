@@ -41,6 +41,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "AboutCompany";
-</style>
+<style src="./AboutCompany.scss" lang="scss"></style>

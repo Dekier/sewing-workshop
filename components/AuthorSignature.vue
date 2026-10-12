@@ -417,6 +417,4 @@ onBeforeUnmount(() => {
   </footer>
 </template>
 
-<style lang="scss">
-@import "AuthorSignature";
-</style>
+<style src="./AuthorSignature.scss" lang="scss"></style>

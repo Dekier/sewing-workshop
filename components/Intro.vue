@@ -35,6 +35,4 @@
   </section>
 </template>
 
-<style lang="scss">
-@import "Intro";
-</style>
+<style src="./Intro.scss" lang="scss"></style>

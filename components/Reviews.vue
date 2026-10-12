@@ -162,11 +162,12 @@ const visibleItems = ref(4);
 
 // Funkcja przełączania tekstu
 const toggleText = (index: number) => {
-  reviews.value[index].isExpanded = !reviews.value[index].isExpanded;
+  const review = reviews.value[index];
+  if (review) review.isExpanded = !review.isExpanded;
 };
 
 const updateVisibleItems = () => {
-  if (process.client) {
+  if (import.meta.client) {
     if (window.innerWidth < 768) visibleItems.value = 1;
     else if (window.innerWidth < 1170) visibleItems.value = 2;
     else visibleItems.value = 4;
@@ -196,11 +197,14 @@ const touchStartX = ref(0);
 const touchEndX = ref(0);
 
 const handleTouchStart = (e: TouchEvent) => {
-  touchStartX.value = e.touches[0].clientX;
+  const touch = e.touches[0];
+  if (touch) touchStartX.value = touch.clientX;
 };
 
 const handleTouchEnd = (e: TouchEvent) => {
-  touchEndX.value = e.changedTouches[0].clientX;
+  const touch = e.changedTouches[0];
+  if (!touch) return;
+  touchEndX.value = touch.clientX;
   handleSwipe();
 };
 

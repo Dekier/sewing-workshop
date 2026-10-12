@@ -43,6 +43,4 @@
   </section>
 </template>
 
-<style lang="scss">
-@import "Recommended";
-</style>
+<style src="./Recommended.scss" lang="scss"></style>

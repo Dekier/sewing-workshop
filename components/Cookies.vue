@@ -17,6 +17,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "Cookies";
-</style>
+<style src="./Cookies.scss" lang="scss" scoped></style>

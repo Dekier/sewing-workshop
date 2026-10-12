@@ -88,6 +88,4 @@ const services = [
 ];
 </script>
 
-<style lang="scss">
-@import "Offer";
-</style>
+<style src="./Offer.scss" lang="scss"></style>

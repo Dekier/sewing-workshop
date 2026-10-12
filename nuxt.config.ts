@@ -1,4 +1,15 @@
 export default defineNuxtConfig({
+  compatibilityDate: "2026-10-12",
+  srcDir: ".",
+  dir: {
+    app: "app",
+  },
+  typescript: {
+    appTsConfig: {
+      exclude: ["../stare/**/*", "../api/**/*"],
+    },
+  },
+
   app: {
     head: {
       htmlAttrs: {
@@ -78,9 +89,6 @@ export default defineNuxtConfig({
         // Jeśli będziesz potrzebować grubszych wariantów, dopisz je tutaj, np. ['400', '600', '700']
       },
     ],
-    experimental: {
-      processCSSVariables: true,
-    },
     // Globalne ustawienia dla wszystkich zdefiniowanych wyżej czcionek
     defaults: {
       preload: true,

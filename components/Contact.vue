@@ -33,6 +33,4 @@
   </section>
 </template>
 
-<style lang="scss">
-@import "Contact";
-</style>
+<style src="./Contact.scss" lang="scss"></style>
