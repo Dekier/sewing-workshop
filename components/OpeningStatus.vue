@@ -5,8 +5,6 @@ const prefersReducedMotion = ref(false);
 const hideButton = ref<HTMLButtonElement | null>(null);
 const showButton = ref<HTMLButtonElement | null>(null);
 const currentTime = ref(new Date());
-const storageKey = "opening-status-collapsed";
-const desktopStorageKey = "opening-status-desktop-dismissed";
 const openingHours: Record<number, { opens: number; closes: number }> = {
   1: { opens: 9 * 60, closes: 18 * 60 },
   2: { opens: 8 * 60, closes: 17 * 60 },
@@ -87,11 +85,6 @@ const updateMotionPreference = () => {
 
 const setCollapsed = (collapsed: boolean) => {
   isCollapsed.value = collapsed;
-  try {
-    sessionStorage.setItem(storageKey, String(collapsed));
-  } catch {
-    // Przy zablokowanym zapisie przyciski nadal działają w bieżącym widoku.
-  }
   nextTick(() => {
     (collapsed ? showButton.value : hideButton.value)?.focus({ preventScroll: true });
   });
@@ -103,28 +96,12 @@ const handleContactClick = () => {
   }
   isVisible.value = false;
   clearTimeout(clockTimer);
-  try {
-    localStorage.setItem(desktopStorageKey, "true");
-  } catch {
-    // Przy zablokowanym zapisie kafelek nie wraca w bieżącym widoku.
-  }
 };
 
 onMounted(() => {
-  let isDesktopDismissed = false;
-  try {
-    isCollapsed.value = sessionStorage.getItem(storageKey) === "true";
-    isDesktopDismissed = localStorage.getItem(desktopStorageKey) === "true";
-  } catch {
-    isCollapsed.value = false;
-  }
   motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
   updateMotionPreference();
   motionPreference.addEventListener("change", updateMotionPreference);
-  // Ten sam próg co $phone w assets/stylesheets/main-variables.scss.
-  if (isDesktopDismissed && window.innerWidth > 599) {
-    return;
-  }
   updateClock();
   appearanceTimer = setTimeout(() => { isVisible.value = true; }, 2000);
 });
