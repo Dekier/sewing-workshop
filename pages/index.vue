@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { schemaHours, schemaLeave } from "../shared/business-hours";
+import { schemaHours, schemaLeave } from "#shared/business-hours";
 const { data: businessHours } = await useBusinessHours();
 useSeoMeta({
   title: "Pracownia krawiecka Magdaleny Dekier | Poznań Piątkowo",

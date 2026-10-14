@@ -2,7 +2,7 @@ import {
   businessIds,
   publicHours,
   type BusinessId,
-} from "../../shared/business-hours";
+} from "#shared/business-hours";
 import { readHours } from "../utils/hours-store";
 
 export default defineEventHandler(async (event) => {

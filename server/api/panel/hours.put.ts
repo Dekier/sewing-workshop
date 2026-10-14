@@ -2,7 +2,7 @@ import {
   businessIds,
   type BusinessId,
   type BusinessSchedule,
-} from "../../../shared/business-hours";
+} from "#shared/business-hours";
 import {
   requirePanelOrigin,
   requirePanelSession,

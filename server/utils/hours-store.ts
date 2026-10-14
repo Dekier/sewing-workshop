@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile, rename } from "node:fs/promises";
 import { resolve } from "node:path";
 import type { H3Event } from "h3";
-import type { HoursDocument } from "../../shared/business-hours";
+import type { HoursDocument } from "#shared/business-hours";
 
 const key = "sewing-dezal:business-hours:v1";
 const localFile = resolve(".data/business-hours.json");

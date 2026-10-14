@@ -6,7 +6,7 @@ import {
   type HoursDocument,
   type BusinessSchedule,
   type BusinessId,
-} from "../shared/business-hours";
+} from "#shared/business-hours";
 
 definePageMeta({ layout: false });
 useSeoMeta({ title: "Panel godzin", robots: "noindex, nofollow" });
