@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <NuxtPage />
-    <Cookies v-if="visibleCookies" @hideCookies="hideCookies" />
+    <Cookies v-if="visibleCookies && route.path !== '/panel'" @hideCookies="hideCookies" />
   </NuxtLayout>
 </template>
 <style>
@@ -23,6 +23,7 @@ html {
 
 <script setup lang="ts">
 const visibleCookies = ref(false);
+const route = useRoute();
 
 const hideCookies = () => {
   visibleCookies.value = false;

@@ -8,7 +8,7 @@
     bottom: 24px;
     z-index: 30;
     width: 330px;
-    border: 1px solid $color-line;
+    border: 1px solid $color-blue-dark;
     border-radius: 8px;
     background: $color-white;
     color: $color-blue-dark;
@@ -35,6 +35,26 @@
         display: none;
       }
     }
+  }
+
+  &__stack {
+    .OpeningStatus__main-container--collapsed & {
+      @include for-phone-only {
+        display: none;
+      }
+    }
+  }
+
+  &__announcement {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 14px;
+    border-bottom: 1px solid $color-blue-dark;
+    border-radius: 8px 8px 0 0;
+    background: $color-blue-soft;
+    color: $color-blue-dark;
+    text-decoration: none;
   }
 
   &__link {
@@ -143,7 +163,9 @@
 
   &__enter-active,
   &__leave-active {
-    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 400ms ease;
+    transition:
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 400ms ease;
 
     &.OpeningStatus__main-container--reduced-motion {
       transition: none;

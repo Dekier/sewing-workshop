@@ -10,15 +10,34 @@
         </div>
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">Godziny otwarcia:</div>
-          <div class="Contact__text">
-            Poniedziałek: <span>9:00 - 18:00</span>
+          <template v-if="businessHours">
+            <div
+              v-for="index in weekdayOrder"
+              :key="index"
+              class="Contact__text"
+            >
+              {{ weekdayNames[index] }}:
+              <span>{{
+                hoursLabel(businessHours.schedule.week[index] ?? null)
+              }}</span>
+            </div>
+            <div
+              v-for="period in businessHours.schedule.leave"
+              :key="period.id"
+              class="Contact__text"
+            >
+              Wolne:
+              <span
+                >{{ dateLabel(period.from) }} – {{ dateLabel(period.to) }}</span
+              >
+            </div>
+            <div class="Contact__text">
+              {{ businessHours.status.title }}. {{ businessHours.status.hours }}
+            </div>
+          </template>
+          <div v-else class="Contact__text">
+            Nie udało się wczytać godzin. Zadzwoń do pracowni.
           </div>
-          <div class="Contact__text">Wtorek: <span>8:00 - 17:00</span></div>
-          <div class="Contact__text">Środa: <span>8:00 - 17:00</span></div>
-          <div class="Contact__text">Czwartek: <span>9:00 - 18:00</span></div>
-          <div class="Contact__text">Piątek: <span>Zamknięte</span></div>
-          <div class="Contact__text">Sobota: <span>Zamknięte</span></div>
-          <div class="Contact__text">Niedziela: <span>Zamknięte</span></div>
         </div>
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">Skontaktuj się:</div>
@@ -34,5 +53,15 @@
     <ContactMap />
   </section>
 </template>
+
+<script setup lang="ts">
+import {
+  weekdayNames,
+  weekdayOrder,
+  hoursLabel,
+  dateLabel,
+} from "../shared/business-hours";
+const { data: businessHours } = await useBusinessHours();
+</script>
 
 <style src="./Contact.scss" lang="scss"></style>

@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
   compatibilityDate: "2026-10-12",
+  runtimeConfig: {
+    upstashRedisRestUrl: "",
+    upstashRedisRestToken: "",
+    panelPassword: "",
+    panelSessionSecret: "",
+  },
   srcDir: ".",
   dir: {
     app: "app",
@@ -19,6 +25,14 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    "/api/**": { prerender: false, cache: false },
+    "/panel": {
+      prerender: false,
+      headers: {
+        "X-Robots-Tag": "noindex, nofollow",
+        "Cache-Control": "no-store",
+      },
+    },
     "/opinia": {
       redirect: {
         to: "https://g.page/r/CRlZPkO0DZHUEBM/review",

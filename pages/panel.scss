@@ -1,0 +1,256 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
+
+.Panel {
+  &__main-container {
+    min-height: 100dvh;
+    box-sizing: border-box;
+    padding: 48px 24px;
+    background: $color-surface;
+    color: $color-ink;
+    font-family: $font-main;
+    &--locked {
+      display: grid;
+      place-items: center;
+    }
+    @include for-phone-only {
+      padding: 28px 16px;
+    }
+  }
+  &__gate {
+    width: min(320px, 100%);
+  }
+  &__password {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    border: 1px solid $color-blue-dark;
+    border-radius: 8px;
+    background: $color-white;
+    color: $color-ink;
+    font: inherit;
+    font-size: 16px;
+    text-align: center;
+  }
+  &__login-status {
+    min-height: 40px;
+    font-size: 13px;
+    text-align: center;
+    color: $color-blue-dark;
+  }
+  &__visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  &__content {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    @include for-phone-only {
+      align-items: flex-start;
+    }
+  }
+  &__eyebrow {
+    color: $color-blue-dark;
+    font-size: 12px;
+    margin: 0 0 8px;
+  }
+  &__title {
+    margin: 0;
+    font-family: $font-display;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.1;
+    @include for-phone-only {
+      font-size: 32px;
+    }
+  }
+  &__businesses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  &__business,
+  &__quiet-button,
+  &__secondary-button,
+  &__save-button {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid $color-line;
+    border-radius: 6px;
+    background: $color-white;
+    color: $color-blue-dark;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.55;
+      cursor: wait;
+    }
+    &:focus-visible {
+      outline: 2px solid $color-blue-dark;
+      outline-offset: 3px;
+    }
+  }
+  &__business--selected,
+  &__save-button {
+    background: $color-blue-dark;
+    border-color: $color-blue-dark;
+    color: $color-white;
+  }
+  &__quiet-button {
+    border-color: transparent;
+    background: transparent;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  &__secondary-button {
+    border-color: $color-blue-dark;
+  }
+  &__notice {
+    padding: 16px;
+    margin: 0 0 24px;
+    background: $color-blue-soft;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  &__section {
+    min-width: 0;
+    margin: 0 0 24px;
+    padding: 24px;
+    border: 1px solid $color-line;
+    border-radius: 8px;
+    background: $color-white;
+    @include for-phone-only {
+      padding: 16px;
+    }
+  }
+  &__section-title {
+    padding: 0 8px;
+    font-family: $font-display;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  &__description {
+    display: block;
+    margin: 8px 0 16px;
+    font-size: 13px;
+    color: $color-muted;
+    line-height: 1.6;
+  }
+  &__day {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid $color-line;
+    &:last-child {
+      border-bottom: 0;
+    }
+    @include for-phone-only {
+      flex-wrap: wrap;
+    }
+  }
+  &__day-label {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    gap: 10px;
+    font-size: 14px;
+  }
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: $color-blue-dark;
+  }
+  &__time-pair {
+    display: flex;
+    gap: 12px;
+  }
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    color: $color-muted;
+  }
+  &__input {
+    min-width: 0;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 8px 10px;
+    border: 1px solid $color-line;
+    border-radius: 4px;
+    background: $color-surface;
+    color: $color-ink;
+    font: inherit;
+    font-size: 16px;
+    &:focus-visible {
+      outline: 2px solid $color-blue-dark;
+      outline-offset: 2px;
+    }
+  }
+  &__closed {
+    font-size: 13px;
+    color: $color-muted;
+  }
+  &__leave-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+    @include for-phone-only {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__leave-list {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  &__leave-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid $color-line;
+    font-size: 14px;
+    .Panel__description {
+      margin-bottom: 0;
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 16px;
+  }
+  &__error {
+    padding: 14px;
+    border-left: 3px solid $color-blue-dark;
+    background: $color-surface-warm;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  &__success {
+    color: $color-blue-dark;
+    font-size: 14px;
+  }
+}

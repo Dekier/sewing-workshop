@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { schemaHours, schemaLeave } from "../shared/business-hours";
+const { data: businessHours } = await useBusinessHours();
 useSeoMeta({
   title: "Pracownia krawiecka Magdaleny Dekier | Poznań Piątkowo",
   ogTitle: "Pracownia krawiecka Magdaleny Dekier | Poznań Piątkowo",
@@ -9,7 +11,7 @@ useSeoMeta({
   ogType: "website",
 });
 
-useHead({
+useHead(() => ({
   htmlAttrs: {
     lang: "pl",
   },
@@ -33,24 +35,14 @@ useHead({
           postalCode: "60-692",
           addressCountry: "PL",
         },
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Thursday"],
-            opens: "09:00",
-            closes: "18:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Tuesday", "Wednesday"],
-            opens: "08:00",
-            closes: "17:00",
-          },
-        ],
+        openingHoursSpecification: schemaHours(businessHours.value?.schedule),
+        specialOpeningHoursSpecification: schemaLeave(
+          businessHours.value?.schedule,
+        ),
       }),
     },
   ],
-});
+}));
 </script>
 
 <template>

@@ -4,80 +4,18 @@ const isCollapsed = ref(false);
 const prefersReducedMotion = ref(false);
 const hideButton = ref<HTMLButtonElement | null>(null);
 const showButton = ref<HTMLButtonElement | null>(null);
-const currentTime = ref(new Date());
-const openingHours: Record<number, { opens: number; closes: number }> = {
-  1: { opens: 9 * 60, closes: 18 * 60 },
-  2: { opens: 8 * 60, closes: 17 * 60 },
-  3: { opens: 8 * 60, closes: 17 * 60 },
-  4: { opens: 9 * 60, closes: 18 * 60 },
-};
-const weekdays = [
-  "Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota",
-];
-const formatter = new Intl.DateTimeFormat("en-GB", {
-  timeZone: "Europe/Warsaw",
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-  hour: "2-digit",
-  minute: "2-digit",
-  hourCycle: "h23",
-});
-
-const formatHour = (minutes: number) =>
-  `${Math.floor(minutes / 60)}:${String(minutes % 60).padStart(2, "0")}`;
-const formatHours = (hours: { opens: number; closes: number }) =>
-  `${formatHour(hours.opens)}–${formatHour(hours.closes)}`;
-
-const status = computed(() => {
-  const parts = Object.fromEntries(
-    formatter.formatToParts(currentTime.value).map((part) => [part.type, part.value]),
-  );
-  const weekday = new Date(
-    Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day)),
-  ).getUTCDay();
-  const minutes = Number(parts.hour) * 60 + Number(parts.minute);
-  const today = openingHours[weekday];
-
-  if (today && minutes >= today.opens && minutes < today.closes) {
-    return {
-      isOpen: true,
-      title: `Otwarte do ${formatHour(today.closes)}`,
-      hours: `Dziś ${formatHours(today)}`,
-    };
-  }
-
-  if (today && minutes < today.opens) {
-    return {
+const { data: businessHours } = await useBusinessHours();
+const status = computed(
+  () =>
+    businessHours.value?.status || {
       isOpen: false,
-      title: `Otwieramy o ${formatHour(today.opens)}`,
-      hours: `Dziś ${formatHours(today)}`,
-    };
-  }
-
-  for (let offset = 1; offset <= 7; offset++) {
-    const nextWeekday = (weekday + offset) % 7;
-    const next = openingHours[nextWeekday];
-    if (next) {
-      return {
-        isOpen: false,
-        title: today ? "Zamknięte" : "Dziś zamknięte",
-        hours: `${offset === 1 ? "Jutro" : weekdays[nextWeekday]} ${formatHours(next)}`,
-      };
-    }
-  }
-
-  return { isOpen: false, title: "Zamknięte", hours: "Sprawdź godziny w Kontakcie" };
-});
+      title: "Godziny niedostępne",
+      hours: "Skontaktuj się z pracownią",
+    },
+);
 
 let appearanceTimer: ReturnType<typeof setTimeout>;
-let clockTimer: ReturnType<typeof setTimeout>;
 let motionPreference: MediaQueryList;
-
-const updateClock = () => {
-  currentTime.value = new Date();
-  clockTimer = setTimeout(updateClock, 60000 - (Date.now() % 60000));
-};
 
 const updateMotionPreference = () => {
   prefersReducedMotion.value = motionPreference.matches;
@@ -86,29 +24,33 @@ const updateMotionPreference = () => {
 const setCollapsed = (collapsed: boolean) => {
   isCollapsed.value = collapsed;
   nextTick(() => {
-    (collapsed ? showButton.value : hideButton.value)?.focus({ preventScroll: true });
+    (collapsed ? showButton.value : hideButton.value)?.focus({
+      preventScroll: true,
+    });
   });
 };
 
 const handleContactClick = () => {
-  if (!hideButton.value || getComputedStyle(hideButton.value).display !== "none") {
+  if (
+    !hideButton.value ||
+    getComputedStyle(hideButton.value).display !== "none"
+  ) {
     return;
   }
   isVisible.value = false;
-  clearTimeout(clockTimer);
 };
 
 onMounted(() => {
   motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
   updateMotionPreference();
   motionPreference.addEventListener("change", updateMotionPreference);
-  updateClock();
-  appearanceTimer = setTimeout(() => { isVisible.value = true; }, 2000);
+  appearanceTimer = setTimeout(() => {
+    isVisible.value = true;
+  }, 2000);
 });
 
 onBeforeUnmount(() => {
   clearTimeout(appearanceTimer);
-  clearTimeout(clockTimer);
   motionPreference?.removeEventListener("change", updateMotionPreference);
 });
 </script>
@@ -132,32 +74,67 @@ onBeforeUnmount(() => {
       }"
       aria-label="Godziny otwarcia pracowni"
     >
-      <div id="opening-status-details" class="OpeningStatus__details">
-        <a class="OpeningStatus__link" href="#contact" @click="handleContactClick">
-          <svg class="OpeningStatus__clock" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="8.5" />
-            <path d="M12 7v5l3 2" />
-          </svg>
-          <span class="OpeningStatus__text" aria-live="polite" aria-atomic="true">
-            <strong class="OpeningStatus__title">{{ status.title }}</strong>
-            <span class="OpeningStatus__hours">{{ status.hours }}</span>
-          </span>
-          <svg class="OpeningStatus__arrow" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h14m-5-5 5 5-5 5" />
-          </svg>
-        </a>
-        <button
-          ref="hideButton"
-          class="OpeningStatus__hide-button"
-          type="button"
-          aria-label="Schowaj godziny otwarcia"
-          aria-controls="opening-status-details"
-          @click="setCollapsed(true)"
+      <div class="OpeningStatus__stack">
+        <a
+          v-if="businessHours?.announcement"
+          class="OpeningStatus__announcement"
+          href="#contact"
+          @click="handleContactClick"
         >
-          <svg class="OpeningStatus__close-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m7 7 10 10M17 7 7 17" />
-          </svg>
-        </button>
+          <strong class="OpeningStatus__title">{{
+            businessHours.announcement.title
+          }}</strong>
+          <span class="OpeningStatus__hours">{{
+            businessHours.announcement.hours
+          }}</span>
+        </a>
+        <div id="opening-status-details" class="OpeningStatus__details">
+          <a
+            class="OpeningStatus__link"
+            href="#contact"
+            @click="handleContactClick"
+          >
+            <svg
+              class="OpeningStatus__clock"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+            <span
+              class="OpeningStatus__text"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <strong class="OpeningStatus__title">{{ status.title }}</strong>
+              <span class="OpeningStatus__hours">{{ status.hours }}</span>
+            </span>
+            <svg
+              class="OpeningStatus__arrow"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14m-5-5 5 5-5 5" />
+            </svg>
+          </a>
+          <button
+            ref="hideButton"
+            class="OpeningStatus__hide-button"
+            type="button"
+            aria-label="Schowaj godziny otwarcia"
+            aria-controls="opening-status-details"
+            @click="setCollapsed(true)"
+          >
+            <svg
+              class="OpeningStatus__close-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="m7 7 10 10M17 7 7 17" />
+            </svg>
+          </button>
+        </div>
       </div>
       <button
         ref="showButton"
@@ -168,7 +145,11 @@ onBeforeUnmount(() => {
         :aria-expanded="!isCollapsed"
         @click="setCollapsed(false)"
       >
-        <svg class="OpeningStatus__clock" viewBox="0 0 24 24" aria-hidden="true">
+        <svg
+          class="OpeningStatus__clock"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
           <circle cx="12" cy="12" r="8.5" />
           <path d="M12 7v5l3 2" />
         </svg>
