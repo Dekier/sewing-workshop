@@ -59,9 +59,11 @@ useHead({
     <Intro />
     <LazyOffer />
     <AboutCompany />
+    <!-- Realizacje tymczasowo ukryte: <LazyRealizations /> -->
     <LazyReviews />
     <LazyRecommended />
     <LazyContact />
+    <OpeningStatus />
   </main>
 </template>
 

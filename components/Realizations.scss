@@ -1,0 +1,233 @@
+@use "@/assets/stylesheets/main-variables" as *;
+@use "@/assets/stylesheets/mixins" as *;
+
+.Realizations {
+  &__main-container {
+    scroll-margin-top: 82px;
+    padding: 108px 0 116px;
+    background: $color-surface;
+
+    @include for-phone-only {
+      padding: 76px 0 86px;
+    }
+  }
+
+  &__inner {
+    width: min(100% - 40px, 1320px);
+    margin: 0 auto;
+
+    @include for-phone-only {
+      width: min(100% - 32px, 1320px);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 28px;
+    margin-bottom: 36px;
+
+    @include for-tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 46px;
+    }
+  }
+
+  &__heading {
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0 0 28px;
+    color: $color-blue-dark;
+    font-family: $font-display;
+    font-size: clamp(48px, 7vw, 64px);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+
+  &__intro {
+    margin: 0;
+    color: $color-muted;
+    font-size: 15px;
+    line-height: 1.7;
+
+    @include for-tablet {
+      font-size: 18px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-shrink: 0;
+    gap: 16px;
+  }
+
+  &__nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-sizing: border-box;
+    width: 124px;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid $color-blue-dark;
+    border-radius: 0;
+    background: $color-surface;
+    color: $color-blue-dark;
+    font-family: $font-main;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: $color-blue-soft;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__nav-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__nav-path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__viewport {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-blue-dark;
+      outline-offset: 6px;
+    }
+
+    @include for-tablet-portrait-up {
+      gap: 28px;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex: 0 0 calc(100% - 48px);
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+    aspect-ratio: 360 / 624;
+    margin: 0;
+    scroll-snap-align: start;
+
+    @include for-tablet-portrait-up {
+      flex-basis: calc((100% - 56px) / 2.2);
+    }
+
+    @include for-desktop-up {
+      flex-basis: 27%;
+    }
+  }
+
+  &__image {
+    display: block;
+    flex: 1;
+    width: 100%;
+    height: 0;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
+    background: $color-surface-warm;
+  }
+
+  &__caption {
+    flex-shrink: 0;
+    min-height: 32px;
+    color: $color-blue-dark;
+    font-size: 15px;
+    line-height: 1.4;
+
+    @include for-tablet {
+      font-size: 17px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 34px;
+
+    @include for-tablet {
+      gap: 44px;
+      margin-top: 44px;
+    }
+  }
+
+  &__counter {
+    flex-shrink: 0;
+    min-width: 48px;
+    margin: 0;
+    color: $color-blue-dark;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+
+    @include for-tablet {
+      min-width: 128px;
+      font-size: 15px;
+    }
+  }
+
+  &__progress {
+    display: grid;
+    flex: 1;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    height: 2px;
+  }
+
+  &__progress-segment {
+    background: $color-line;
+
+    &--active {
+      background: $color-blue-dark;
+    }
+  }
+
+  &__note {
+    margin: 24px 0 0;
+    color: $color-muted;
+    font-size: 12px;
+  }
+
+  &__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

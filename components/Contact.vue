@@ -17,6 +17,8 @@
           <div class="Contact__text">Środa: <span>8:00 - 17:00</span></div>
           <div class="Contact__text">Czwartek: <span>9:00 - 18:00</span></div>
           <div class="Contact__text">Piątek: <span>Zamknięte</span></div>
+          <div class="Contact__text">Sobota: <span>Zamknięte</span></div>
+          <div class="Contact__text">Niedziela: <span>Zamknięte</span></div>
         </div>
         <div class="Contact__half-container-cell">
           <div class="Contact__half-container-title">Skontaktuj się:</div>
