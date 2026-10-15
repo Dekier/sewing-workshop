@@ -24,15 +24,32 @@
             <div
               v-for="period in businessHours.schedule.leave"
               :key="period.id"
-              class="Contact__text"
+              class="Contact__leave-notice"
+              role="note"
             >
-              Wolne:
-              <span
-                >{{ dateLabel(period.from) }} – {{ dateLabel(period.to) }}</span
+              <p class="Contact__leave-text">
+                Uprzejmie informujemy, że w dniach
+                <strong
+                  >{{ dateLabel(period.from) }} –
+                  {{ dateLabel(period.to) }}</strong
+                >
+                pracownia
+                {{
+                  period.from > businessHours.today
+                    ? "będzie nieczynna"
+                    : "jest nieczynna"
+                }}.
+              </p>
+              <p
+                v-if="
+                  period.from <= businessHours.today &&
+                  period.to >= businessHours.today
+                "
+                class="Contact__leave-text"
               >
-            </div>
-            <div class="Contact__text">
-              {{ businessHours.status.title }}. {{ businessHours.status.hours }}
+                {{ businessHours.status.hours }}.
+              </p>
+              <p class="Contact__leave-text">Dziękujemy za wyrozumiałość.</p>
             </div>
           </template>
           <div v-else class="Contact__text">

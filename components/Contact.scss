@@ -84,6 +84,26 @@
     }
   }
 
+  &__leave-notice {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: $color-blue-dark;
+    color: $color-white;
+  }
+
+  &__leave-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+
+    & + & {
+      margin-top: 8px;
+    }
+  }
+
   &__map {
     position: relative;
     width: 100%;

@@ -129,9 +129,9 @@ export function publicHours(
   if (active) {
     status = {
       isOpen: false,
-      title: `Mamy wolne do ${dateLabel(active.to)}`,
+      title: `${business === "dezal" ? "Biuro nieczynne" : "Pracownia nieczynna"} do ${dateLabel(active.to)}`,
       hours: next
-        ? `Wracamy ${dateLabel(next.date)} o ${next.day.opens}`
+        ? `Zapraszamy ponownie ${dateLabel(next.date)} od ${next.day.opens}`
         : nextLabel,
     };
   } else if (today && time >= today.opens && time < today.closes) {
@@ -164,7 +164,7 @@ export function publicHours(
     status,
     announcement: upcoming
       ? {
-          title: "Planowane wolne",
+          title: "Planowana przerwa w pracy",
           hours: `${dateLabel(upcoming.from)} – ${dateLabel(upcoming.to)}`,
         }
       : null,
@@ -175,7 +175,7 @@ export function publicHours(
 export const schemaHours = (schedule?: BusinessSchedule) =>
   schedule?.week.map((day, index) => ({
     "@type": "OpeningHoursSpecification" as const,
-        dayOfWeek: schemaWeekdays[index]!,
+    dayOfWeek: schemaWeekdays[index]!,
     opens: day?.opens ?? "00:00",
     closes: day?.closes ?? "00:00",
   })) ?? [];

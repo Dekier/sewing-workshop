@@ -5,6 +5,13 @@ const prefersReducedMotion = ref(false);
 const hideButton = ref<HTMLButtonElement | null>(null);
 const showButton = ref<HTMLButtonElement | null>(null);
 const { data: businessHours } = await useBusinessHours();
+const isOnLeave = computed(() => {
+  const hours = businessHours.value;
+  if (!hours) return false;
+  return hours.schedule.leave.some(
+    (period) => period.from <= hours.today && period.to >= hours.today,
+  );
+});
 const status = computed(
   () =>
     businessHours.value?.status || {
@@ -71,6 +78,7 @@ onBeforeUnmount(() => {
         'OpeningStatus__main-container--collapsed': isCollapsed,
         'OpeningStatus__main-container--reduced-motion': prefersReducedMotion,
         'OpeningStatus__main-container--closed': !status.isOpen,
+        'OpeningStatus__main-container--leave': isOnLeave,
       }"
       aria-label="Godziny otwarcia pracowni"
     >

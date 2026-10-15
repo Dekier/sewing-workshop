@@ -24,6 +24,11 @@
         width: auto;
       }
     }
+
+    &--leave {
+      background: $color-blue-dark;
+      color: $color-white;
+    }
   }
 
   &__details {
@@ -72,6 +77,10 @@
 
     &:hover {
       background: $color-blue-pale;
+
+      .OpeningStatus__main-container--leave & {
+        background: $color-blue-deep;
+      }
     }
   }
 
@@ -91,12 +100,20 @@
     .OpeningStatus__main-container--closed & {
       color: $color-muted;
     }
+
+    .OpeningStatus__main-container--leave .OpeningStatus__details & {
+      color: $color-white;
+    }
   }
 
   &__hours {
     color: $color-muted;
     font-size: 12px;
     line-height: 1.4;
+
+    .OpeningStatus__main-container--leave .OpeningStatus__details & {
+      color: $color-white;
+    }
   }
 
   &__clock,
@@ -120,6 +137,11 @@
 
   &__hide-button {
     display: none;
+
+    .OpeningStatus__main-container--leave & {
+      color: $color-white;
+      border-left-color: $color-blue-soft;
+    }
 
     @include for-phone-only {
       display: flex;
@@ -153,6 +175,10 @@
     font: inherit;
     font-size: 12px;
     cursor: pointer;
+
+    .OpeningStatus__main-container--leave & {
+      color: $color-white;
+    }
 
     .OpeningStatus__main-container--collapsed & {
       @include for-phone-only {
