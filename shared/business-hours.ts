@@ -42,6 +42,7 @@ export interface PublicHours {
   schedule: BusinessSchedule;
   status: { isOpen: boolean; title: string; hours: string };
   announcement: { title: string; hours: string } | null;
+  reopening: { date: string; opens: string } | null;
   today: string;
 }
 
@@ -129,9 +130,9 @@ export function publicHours(
   if (active) {
     status = {
       isOpen: false,
-      title: `${business === "dezal" ? "Biuro nieczynne" : "Pracownia nieczynna"} do ${dateLabel(active.to)}`,
+      title: `Przerwa urlopowa do ${dateLabel(active.to)}`,
       hours: next
-        ? `Zapraszamy ponownie ${dateLabel(next.date)} od ${next.day.opens}`
+        ? `Ponowne otwarcie: ${dateLabel(next.date)} o ${next.day.opens}`
         : nextLabel,
     };
   } else if (today && time >= today.opens && time < today.closes) {
@@ -162,9 +163,10 @@ export function publicHours(
       ),
     },
     status,
+    reopening: active && next ? { date: next.date, opens: next.day.opens } : null,
     announcement: upcoming
       ? {
-          title: "Planowana przerwa w pracy",
+          title: "Planowana przerwa urlopowa",
           hours: `${dateLabel(upcoming.from)} – ${dateLabel(upcoming.to)}`,
         }
       : null,

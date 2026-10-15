@@ -28,28 +28,24 @@
               role="note"
             >
               <p class="Contact__leave-text">
-                Uprzejmie informujemy, że w dniach
+                Przerwa urlopowa potrwa od
                 <strong
-                  >{{ dateLabel(period.from) }} –
+                  >{{ dateLabel(period.from) }} do
                   {{ dateLabel(period.to) }}</strong
-                >
-                pracownia
-                {{
-                  period.from > businessHours.today
-                    ? "będzie nieczynna"
-                    : "jest nieczynna"
-                }}.
+                >.
               </p>
               <p
                 v-if="
                   period.from <= businessHours.today &&
-                  period.to >= businessHours.today
+                  period.to >= businessHours.today &&
+                  businessHours.reopening
                 "
                 class="Contact__leave-text"
               >
-                {{ businessHours.status.hours }}.
+                Zapraszamy do pracowni od
+                {{ dateLabel(businessHours.reopening!.date) }}, od godziny
+                {{ businessHours.reopening!.opens }}.
               </p>
-              <p class="Contact__leave-text">Dziękujemy za wyrozumiałość.</p>
             </div>
           </template>
           <div v-else class="Contact__text">
