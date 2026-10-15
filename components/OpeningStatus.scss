@@ -69,7 +69,7 @@
 
   &__link {
     display: flex;
-    flex: 1;
+    flex: 1 1 auto;
     align-items: center;
     gap: 12px;
     min-width: 0;
@@ -91,9 +91,10 @@
 
   &__text {
     display: flex;
-    flex: 1;
+    flex: 1 1 auto;
     flex-direction: column;
     gap: 3px;
+    width: max-content;
     min-width: 0;
   }
 
