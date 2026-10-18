@@ -72,6 +72,17 @@ export default defineNuxtConfig({
         ],
       },
       {
+        title: "Realizacje przed i po",
+        description:
+          "Zdjęcia i opisy napraw wykonanych przez Magdalenę Dekier w pracowni w Poznaniu na Piątkowie. Porównania przed i po pokazują zszycie rozdarcia przy kieszeni kurtki puchowej oraz wzmocnienie przetarcia w kroku jeansów. Każda realizacja zawiera opis problemu, wykonanych prac i efektu.",
+        links: [
+          {
+            title: "Realizacje pracowni — zdjęcia przed i po",
+            href: "https://pracownia-krawiecka.pl/realizacje",
+          },
+        ],
+      },
+      {
         title: "Kontakt",
         description:
           "Adres: ul. Jaroczyńskiego 41, 60-692 Poznań-Piątkowo. Telefon: +48 691 860 192. E-mail: magdalenadekier@op.pl. Aktualne godziny otwarcia i mapę dojazdu można znaleźć w sekcji kontaktowej strony.",

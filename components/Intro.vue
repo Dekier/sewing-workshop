@@ -5,7 +5,9 @@
         <h1 class="Intro__title">
           <span class="Intro__title-line">Pracownia</span>
           <span class="Intro__title-line">krawiecka</span>
-          <span class="Intro__title-line Intro__title-line--name">Magdaleny Dekier</span>
+          <span class="Intro__title-line Intro__title-line--name"
+            >Magdaleny Dekier</span
+          >
         </h1>
 
         <p class="Intro__description">

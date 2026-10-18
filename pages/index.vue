@@ -50,8 +50,8 @@ useHead(() => ({
     <TopNavbar />
     <Intro />
     <LazyOffer />
+    <LazyRealizationShowcase />
     <AboutCompany />
-    <!-- Realizacje tymczasowo ukryte: <LazyRealizations /> -->
     <LazyReviews />
     <LazyRecommended />
     <LazyContact />

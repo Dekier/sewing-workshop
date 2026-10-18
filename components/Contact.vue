@@ -21,6 +21,19 @@
                 hoursLabel(businessHours.schedule.week[index] ?? null)
               }}</span>
             </div>
+          </template>
+          <div v-else class="Contact__text">
+            Nie udało się wczytać godzin. Zadzwoń do pracowni.
+          </div>
+        </div>
+        <div class="Contact__half-container-cell">
+          <div class="Contact__half-container-title">Skontaktuj się:</div>
+          <a href="tel:691860192" class="Contact__text">
+            Telefon: 691 860 192 </a
+          ><a href="mailto:magdalenadekier@op.pl" class="Contact__text">
+            E-mail: magdalenadekier@op.pl
+          </a>
+          <template v-if="businessHours">
             <div
               v-for="period in businessHours.schedule.leave"
               :key="period.id"
@@ -48,17 +61,6 @@
               </p>
             </div>
           </template>
-          <div v-else class="Contact__text">
-            Nie udało się wczytać godzin. Zadzwoń do pracowni.
-          </div>
-        </div>
-        <div class="Contact__half-container-cell">
-          <div class="Contact__half-container-title">Skontaktuj się:</div>
-          <a href="tel:691860192" class="Contact__text">
-            Telefon: 691 860 192 </a
-          ><a href="mailto:magdalenadekier@op.pl" class="Contact__text">
-            E-mail: magdalenadekier@op.pl
-          </a>
         </div>
       </div>
     </div>

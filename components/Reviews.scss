@@ -89,6 +89,7 @@
 
   &__track {
     display: flex;
+    width: calc(100% + 16px);
     transition: transform 400ms ease;
   }
 
