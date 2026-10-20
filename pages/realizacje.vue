@@ -2,7 +2,7 @@
 const siteUrl = "https://pracownia-krawiecka.pl";
 const pageUrl = `${siteUrl}/realizacje`;
 const title = "Realizacje przed i po | Pracownia krawiecka Poznań Piątkowo";
-const description = "Zobacz naprawę kurtki puchowej i przetarcia jeansów przed i po. Zdjęcia i opisy realizacji Pracowni Krawieckiej Magdaleny Dekier w Poznaniu na Piątkowie.";
+const description = "Zobacz naprawę kurtki, przetarcia jeansów i skracanie spodni z oryginalnym wykończeniem. Zdjęcia przed i po z Pracowni Krawieckiej Magdaleny Dekier w Poznaniu na Piątkowie.";
 const realizations = [
   {
     id: "kurtka-puchowa",
@@ -26,6 +26,18 @@ const realizations = [
     images: [
       { src: "/images/realizacje/jeansy-przetarcie-przed.jpg", alt: "Przetarcie i rozdarcie jeansów w kroku przy szwie siedzenia przed naprawą", label: "Przed", width: 720, height: 900 },
       { src: "/images/realizacje/jeansy-przetarcie-po.jpg", alt: "Jeansy po wzmocnieniu przetarcia denimem i przeszyciu nitką w kolorze materiału", label: "Po", width: 720, height: 900 },
+    ],
+  },
+  {
+    id: "jeansy-skrocenie",
+    category: "Jeansy · skracanie",
+    title: "Skracanie jeansów",
+    problem: "Nogawki miały nierówną długość, a spodnie wymagały skrócenia.",
+    work: "Podczas przymiarki zaznaczyłam długość nogawek, a potem wymierzyłam spodnie na stole i wyrównałam nogawki. Przycięłam je do odpowiedniej długości i doszyłam oryginalne wykończenie grubymi nićmi do jeansu.",
+    result: "Spodnie zachowały oryginalne wykończenie, a dzięki równym nogawkom wyglądają lepiej niż przed skróceniem.",
+    images: [
+      { src: "/images/realizacje/jeansy-skrocenie-przed.webp", alt: "Jeansy przed skróceniem z miarą i zaznaczoną długością nogawek na stole krawieckim", label: "Przed", width: 2304, height: 4096 },
+      { src: "/images/realizacje/jeansy-skrocenie-po.webp", alt: "Jeansy po skróceniu i wyrównaniu nogawek z doszytym oryginalnym wykończeniem", label: "Po", width: 2304, height: 4096 },
     ],
   },
 ];
@@ -132,8 +144,8 @@ onBeforeUnmount(closePhotos);
             <figure v-for="photo in realization.images" :key="photo.src" class="Realizations__photo" :class="{ 'Realizations__photo--after': photo.label === 'Po' }">
               <img class="Realizations__case-image" :src="photo.src" :alt="photo.alt" :width="photo.width" :height="photo.height" :loading="index === 0 ? 'eager' : 'lazy'" decoding="async" />
               <figcaption class="Realizations__photo-tag" :class="{ 'Realizations__photo-tag--after': photo.label === 'Po' }">{{ photo.label }}</figcaption>
-              <span class="Realizations__photo-mark" aria-hidden="true" />
-              <span v-if="photo.label === 'Po'" class="Realizations__photo-note" aria-hidden="true">{{ realization.id === 'jeansy' ? 'Tu było przetarcie' : 'Tu było rozdarcie' }}</span>
+              <span v-if="realization.id !== 'jeansy-skrocenie'" class="Realizations__photo-mark" aria-hidden="true" />
+              <span v-if="photo.label === 'Po' && realization.id !== 'jeansy-skrocenie'" class="Realizations__photo-note" aria-hidden="true">{{ realization.id === 'jeansy' ? 'Tu było przetarcie' : 'Tu było rozdarcie' }}</span>
             </figure>
           </div>
 

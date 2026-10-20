@@ -87,6 +87,10 @@
     aspect-ratio: 4 / 5;
     object-fit: cover;
     background: $color-surface-warm;
+
+    .Realizations__comparison--jeansy-skrocenie & {
+      aspect-ratio: 9 / 16;
+    }
   }
 
   &__photo-tag {
