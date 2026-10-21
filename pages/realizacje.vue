@@ -144,8 +144,8 @@ onBeforeUnmount(closePhotos);
             <figure v-for="photo in realization.images" :key="photo.src" class="Realizations__photo" :class="{ 'Realizations__photo--after': photo.label === 'Po' }">
               <img class="Realizations__case-image" :src="photo.src" :alt="photo.alt" :width="photo.width" :height="photo.height" :loading="index === 0 ? 'eager' : 'lazy'" decoding="async" />
               <figcaption class="Realizations__photo-tag" :class="{ 'Realizations__photo-tag--after': photo.label === 'Po' }">{{ photo.label }}</figcaption>
-              <span v-if="realization.id !== 'jeansy-skrocenie'" class="Realizations__photo-mark" aria-hidden="true" />
-              <span v-if="photo.label === 'Po' && realization.id !== 'jeansy-skrocenie'" class="Realizations__photo-note" aria-hidden="true">{{ realization.id === 'jeansy' ? 'Tu było przetarcie' : 'Tu było rozdarcie' }}</span>
+              <span class="Realizations__photo-mark" aria-hidden="true" />
+              <span v-if="photo.label === 'Po'" class="Realizations__photo-note" aria-hidden="true">{{ realization.id === 'jeansy-skrocenie' ? 'Skrócone, równe nogawki' : realization.id === 'jeansy' ? 'Tu było przetarcie' : 'Tu było rozdarcie' }}</span>
             </figure>
           </div>
 
