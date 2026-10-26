@@ -40,6 +40,19 @@ const realizations = [
       { src: "/images/realizacje/jeansy-skrocenie-po.webp", alt: "Jeansy po skróceniu i wyrównaniu nogawek z doszytym oryginalnym wykończeniem", label: "Po", width: 2304, height: 4096 },
     ],
   },
+  {
+    id: "koszula-taliowanie",
+    category: "Koszula · taliowanie",
+    title: "Taliowanie koszuli",
+    marks: false,
+    problem: "Koszula była za szeroka w talii, a materiał na plecach tworzył zbędne fałdy.",
+    work: "Podczas przymiarki wpięłam szpilki wzdłuż pleców i zaznaczyłam, ile materiału trzeba zabrać. Potem zwęziłam koszulę w talii, prowadząc szwy od linii pod ramionami aż do dołu.",
+    result: "Koszula przylega do sylwetki w talii, a materiał na plecach leży gładko, bez zbędnych fałd.",
+    images: [
+      { src: "/images/realizacje/koszula-taliowanie-przed.webp", alt: "Bordowa sztruksowa koszula z tyłu z wpiętymi szpilkami, które zaznaczają miejsca do zwężenia w talii", label: "Przed", width: 450, height: 800 },
+      { src: "/images/realizacje/koszula-taliowanie-po.webp", alt: "Bordowa sztruksowa koszula z tyłu po taliowaniu, z gładkimi plecami i dopasowaną talią", label: "Po", width: 450, height: 800 },
+    ],
+  },
 ];
 
 useSeoMeta({
@@ -144,8 +157,8 @@ onBeforeUnmount(closePhotos);
             <figure v-for="photo in realization.images" :key="photo.src" class="Realizations__photo" :class="{ 'Realizations__photo--after': photo.label === 'Po' }">
               <img class="Realizations__case-image" :src="photo.src" :alt="photo.alt" :width="photo.width" :height="photo.height" :loading="index === 0 ? 'eager' : 'lazy'" decoding="async" />
               <figcaption class="Realizations__photo-tag" :class="{ 'Realizations__photo-tag--after': photo.label === 'Po' }">{{ photo.label }}</figcaption>
-              <span class="Realizations__photo-mark" aria-hidden="true" />
-              <span v-if="photo.label === 'Po'" class="Realizations__photo-note" aria-hidden="true">{{ realization.id === 'jeansy-skrocenie' ? 'Skrócone, równe nogawki' : realization.id === 'jeansy' ? 'Tu było przetarcie' : 'Tu było rozdarcie' }}</span>
+              <span v-if="realization.marks !== false" class="Realizations__photo-mark" aria-hidden="true" />
+              <span v-if="photo.label === 'Po' && realization.marks !== false" class="Realizations__photo-note" aria-hidden="true">{{ realization.id === 'jeansy-skrocenie' ? 'Skrócone, równe nogawki' : realization.id === 'jeansy' ? 'Tu było przetarcie' : 'Tu było rozdarcie' }}</span>
             </figure>
           </div>
 

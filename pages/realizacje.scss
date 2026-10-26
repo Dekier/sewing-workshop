@@ -88,7 +88,8 @@
     object-fit: cover;
     background: $color-surface-warm;
 
-    .Realizations__comparison--jeansy-skrocenie & {
+    .Realizations__comparison--jeansy-skrocenie &,
+    .Realizations__comparison--koszula-taliowanie & {
       aspect-ratio: 9 / 16;
     }
   }
